@@ -21,6 +21,7 @@
 					<option value="accountant">Accountant</option>
 					<option value="salesperson">Salesperson</option>
 					<option value="stockkeeper">Stock keeper</option>
+					<option value="admin">System Administrator</option>
 				</select>
 			</div>
 			<button type="submit" class="btn btn-primary">Add User</button>

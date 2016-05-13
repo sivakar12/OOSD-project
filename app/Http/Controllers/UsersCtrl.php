@@ -21,8 +21,9 @@ class UsersCtrl extends Controller
     }
     public function create(Request $request) {
     	$this->validate($request, [
-    		'username' => 'required',
-    		'password' => 'required'
+    		'username' => 'required|alpha_num',
+    		'password' => 'required|alpha_dash',
+    		'type' => 'in:admin,manager,accountant,salesperson,stockkeeper',
     	]);
     	$user = new User;
     	$user->create($request->all());
