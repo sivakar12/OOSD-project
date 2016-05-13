@@ -36,7 +36,8 @@ class SuppliersCtrl extends Controller
     	$supplier->update($request->all());
     	return redirect('/suppliers/' . $supplier->id);
     }
-    public function delete() {
-    	return 'trying to tdelete';
+    public function delete(Supplier $supplier) {
+    	$supplier->delete();
+    	return redirect('/suppliers/');
     }
 }
