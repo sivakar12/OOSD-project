@@ -24,3 +24,13 @@ Route::group([], function() {
 	Route::patch('/suppliers/{supplier}', 'SuppliersCtrl@update');
 	Route::delete('/suppliers/{supplier}', 'SuppliersCtrl@delete');
 });
+
+Route::group([], function() {
+	Route::get('/customers', 'CustomersCtrl@index');
+	Route::get('/customers/{customer}', 'CustomersCtrl@view')->where('customer', '[0-9]+');
+	Route::get('/customers/new', 'CustomersCtrl@new');
+	Route::post('/customers', 'CustomersCtrl@create');
+	Route::get('/customers/{customer}/edit', 'CustomersCtrl@edit');
+	Route::patch('/customers/{customer}', 'CustomersCtrl@update');
+	Route::delete('/customers/{customer}', 'CustomersCtrl@delete');
+});
