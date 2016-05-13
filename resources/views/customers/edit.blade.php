@@ -13,8 +13,8 @@
 			</div>
 			<div class="form-group">
 				<label for="address">Address: </label>
-				<input name="address" type="text" class="form-control"
-							 value="{{$customer->address}}">
+				<textarea name="address" type="text" class="form-control"
+							 value="{{$customer->address}}"></textarea>
 			</div>
 			<div class="form-group">
 				<label for="telephone">Telephone: </label>

@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Bitulink Dealings</title>
-		<link rel="stylesheet" href="/bootstrap-darkly.min.css">
+		<link rel="stylesheet" href="/bootstrap-paper.min.css">
 		<script src="jquery.min.js"></script>
 		<script src="bootstrap.min.js"></script>
 	</head>
