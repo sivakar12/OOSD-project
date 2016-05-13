@@ -20,6 +20,12 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        DB::table('users')->insert([
+            'username' => 'foo',
+            'password' => 'bar',
+            'type' => 'manager'
+        ])
     }
 
     /**
