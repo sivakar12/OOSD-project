@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-offset-3 col-md-6">
-		<h1>Suppliers List</h1>
+		<h1>All Users</h1>
 		<a class="btn btn-default pull-right" href="/users/new">New</a>
 		<br><br>
 		<ul class="list-group">

@@ -34,3 +34,13 @@ Route::group([], function() {
 	Route::patch('/customers/{customer}', 'CustomersCtrl@update');
 	Route::delete('/customers/{customer}', 'CustomersCtrl@delete');
 });
+
+Route::group([], function() {
+	Route::get('/users', 'UsersCtrl@index');
+	Route::get('/users/{user}', 'UsersCtrl@view')->where('user', '[0-9]+');
+	Route::get('/users/new', 'UsersCtrl@new');
+	Route::post('/users', 'UsersCtrl@create');
+	Route::get('/users/{user}/edit', 'UsersCtrl@edit');
+	Route::patch('/users/{user}', 'UsersCtrl@update');
+	Route::delete('/users/{user}', 'UsersCtrl@delete');
+});
