@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
         DB::table('users')->insert([
             'username' => 'foo',
             'password' => 'bar',
-            'type' => 'manager'
+            'type' => 'admin'
         ])
     }
 
