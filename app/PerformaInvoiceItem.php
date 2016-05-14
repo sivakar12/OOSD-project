@@ -15,6 +15,6 @@ class PerformaInvoiceItem extends Model
     protected $dates = ['deleted_at'];
 
     public function invoice() {
-    	$this->belongsTo('App\PerformaInvoice');
+    	return $this->belongsTo('App\PerformaInvoice');
     }
 }

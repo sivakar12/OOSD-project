@@ -16,6 +16,8 @@ class CreatePerformaInvoicesTable extends Migration
             $table->increments('id');
             $table->integer('supplier_id');
             $table->timestamps();
+            
+            $table->softDeletes();
         });
     }
 

@@ -44,3 +44,13 @@ Route::group([], function() {
 	Route::patch('/users/{user}', 'UsersCtrl@update');
 	Route::delete('/users/{user}', 'UsersCtrl@delete');
 });
+
+Route::group([], function() {
+	Route::get('/pi', 'PICtrl@index');
+	Route::get('/pi/new/', 'PICtrl@new');
+	Route::post('/pi', 'PICtrl@create');
+	Route::get('/pi/{pi}', 'PICtrl@view');
+	Route::delete('/pi/{pi}', 'PICtrl@delete');
+	Route::post('/pi/{pi}', 'PICtrl@addItem');
+	Route::delete('/pi/{pi}/{pii}', 'PICtrl@removeItem');
+});

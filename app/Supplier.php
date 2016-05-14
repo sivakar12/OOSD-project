@@ -12,4 +12,8 @@ class Supplier extends Model
     protected $fillable = ['name', 'address', 'telephone', 'email', 'website'];
 
     protected $dates = ['deleted_at'];
+
+    public function performa_invoices() {
+    	return $this->hasMany('App\PerformaInvoice');
+    }
 }

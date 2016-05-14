@@ -14,9 +14,9 @@ class PerformaInvoice extends Model
     protected $dates = ['deleted_at'];
 
     public function supplier() {
-    	$this->belongsTo('App\Supplier');
+    	return $this->belongsTo('App\Supplier');
     }
     public function items() {
-    	$this->hasMany('App\PerformaInvoiceItem');
+    	return $this->hasMany('App\PerformaInvoiceItem');
     }
 }
