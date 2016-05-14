@@ -11,9 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+use Illuminate\Http\Request;
+use App\User;
+
+Route::get('/', function () { return view('welcome'); });
+
+Route::get('/login', function() { return view('login'); });
+
+Route::post('/login', function(Request $request) {
+	$user = User::where([
+		'username' => $request->username,
+		'password' => $request->password
+	])->get()->first();
+	if ($user != null) {
+		Auth::login($user);
+		return redirect('/');
+	} else {
+		return redirect('/login');
+	}
 });
+
+Route::get('/logout', function() {
+	Auth::logout();
+	return redirect('/');
+});
+
+Route::get('/denied', function() { return view('denied'); });
 
 Route::group([], function() {
 	Route::get('/suppliers', 'SuppliersCtrl@index');
