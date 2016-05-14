@@ -56,3 +56,14 @@ Route::group([], function() {
 	Route::post('/pi/{pi}', 'PICtrl@addItem');
 	Route::delete('/pi/{pi}/{pii}', 'PICtrl@removeItem');
 });
+
+Route::group([], function() {
+	Route::get('/po', 'POCtrl@index');
+	Route::get('/po/new/', 'POCtrl@new');
+	Route::post('/po', 'POCtrl@create');
+	Route::get('/po/{po}', 'POCtrl@view');
+	Route::get('/po/edit/{po}', 'POCtrl@edit');
+	Route::delete('/po/{po}', 'POCtrl@delete');
+	Route::post('/po/{po}', 'POCtrl@addItem');
+	Route::delete('/po/{po}/{poi}', 'POCtrl@removeItem');
+});
