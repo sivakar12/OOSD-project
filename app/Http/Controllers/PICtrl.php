@@ -23,6 +23,13 @@ class PICtrl extends Controller
 		}
 		return view('pi.view', ['pi' => $pi, 'total' => $total]);
 	}
+	public function edit(PerformaInvoice $pi) {
+		$total = 0;
+		foreach ($pi->items as $item) {
+			$total += $item->quantity * $item->price;
+		}
+		return view('pi.edit', ['pi' => $pi, 'total' => $total]);
+	}
 	public function new() {
 		$suppliers = Supplier::all();
 		return view('pi.new', ['suppliers' => $suppliers]);
@@ -31,7 +38,7 @@ class PICtrl extends Controller
 		$pi = new PerformaInvoice;
 		$pi->supplier_id = $request->supplier_id;
 		$pi->save();
-		return redirect('/pi/' . $pi->id);
+		return redirect('/pi/edit/' . $pi->id);
 	}
 	public function delete(PerformaInvoice $pi) {
 		$pi->delete();
@@ -39,10 +46,10 @@ class PICtrl extends Controller
 	}
 	public function addItem(Request $request, PerformaInvoice $pi) {
 		$pi->items()->create($request->all());
-		return redirect('/pi/' . $pi->id);
+		return redirect('/pi/edit/' . $pi->id);
 	}
 	public function removeItem(PerformaInvoice $pi, PerformaInvoiceItem $pii) {
 		$pii->delete();
-		return redirect('/pi/'. $pi->id);
+		return redirect('/pi/edit/'. $pi->id);
 	} 
 }

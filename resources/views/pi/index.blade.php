@@ -12,6 +12,7 @@
 					<th>Date</th>
 					<th>Supplier</th>
 					<th></th>
+					<th></th>
 				</tr>
 			</thead>
 			@foreach($pis as $pi)
@@ -19,7 +20,8 @@
 					<td>{{ $pi->id }}</td>
 					<td>{{ $pi->created_at->format('d-m-Y')}}</td>
 					<td>{{ $pi->supplier->name }}</td>
-					<td><a href="/pi/{{$pi->id}}">Details</a></td>
+					<td><a href="/pi/{{$pi->id}}">View</a></td>
+					<td><a href="/pi/edit/{{$pi->id}}">Edit</a></td>
 				</tr>
 			@endforeach
 		</table>

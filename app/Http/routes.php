@@ -51,6 +51,7 @@ Route::group([], function() {
 	Route::get('/pi/new/', 'PICtrl@new');
 	Route::post('/pi', 'PICtrl@create');
 	Route::get('/pi/{pi}', 'PICtrl@view');
+	Route::get('/pi/edit/{pi}', 'PICtrl@edit');
 	Route::delete('/pi/{pi}', 'PICtrl@delete');
 	Route::post('/pi/{pi}', 'PICtrl@addItem');
 	Route::delete('/pi/{pi}/{pii}', 'PICtrl@removeItem');
