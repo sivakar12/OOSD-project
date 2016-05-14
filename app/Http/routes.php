@@ -23,6 +23,7 @@ Route::group([], function() {
 	Route::get('/suppliers/{supplier}/edit', 'SuppliersCtrl@edit');
 	Route::patch('/suppliers/{supplier}', 'SuppliersCtrl@update');
 	Route::delete('/suppliers/{supplier}', 'SuppliersCtrl@delete');
+	Route::get('/suppliers/{supplier}/invoices', 'SuppliersCtrl@viewInvoices');
 });
 
 Route::group([], function() {

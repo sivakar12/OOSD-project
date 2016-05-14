@@ -14,8 +14,7 @@ class PICtrl extends Controller
 {
     public function index() {
 		$all = PerformaInvoice::all();
-		$suppliers = Supplier::all();
-		return view('pi.index', ['pis' => $all, 'suppliers' => $suppliers]);
+		return view('pi.index', ['pis' => $all]);
 	}
 	public function view(PerformaInvoice $pi) {
 		$total = 0;

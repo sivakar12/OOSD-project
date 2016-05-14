@@ -21,7 +21,7 @@ class CreatePerformaInvoiceItemsTable extends Migration
             $table->integer('year');
             $table->string('description');
             $table->integer('quantity');
-            $table->decimal('price');
+            $table->decimal('price', 12, 2);
             $table->timestamps();
             $table->softDeletes();
         });

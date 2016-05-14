@@ -40,4 +40,9 @@ class SuppliersCtrl extends Controller
     	$supplier->delete();
     	return redirect('/suppliers/');
     }
+
+
+    public function viewInvoices(Supplier $supplier) {
+        return view('pi.index', ['pis' => $supplier->performa_invoices]);
+    }
 }

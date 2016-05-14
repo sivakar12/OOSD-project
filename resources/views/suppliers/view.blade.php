@@ -22,6 +22,7 @@
 		</div>
 	</div>
 	<!-- Delete and Edit buttons -->
+	<a href="/suppliers/{{$supplier->id}}/invoices" class="btn btn-primary">View Invoices</a>
 	<div class="pull-right">
 	<a href="/suppliers/{{ $supplier->id }}/edit" class="btn btn-primary">Edit Details</a>
 		<form action="/suppliers/{{ $supplier->id }}" method="post" style="display: inline-block">
