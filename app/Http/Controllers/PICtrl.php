@@ -21,14 +21,14 @@ class PICtrl extends Controller
 		foreach ($pi->items as $item) {
 			$total += $item->quantity * $item->price;
 		}
-		return view('pi.view', ['pi' => $pi, 'total' => $total]);
+		return view('pi.view', ['pi' => $pi, 'total' => $total, 'edit' => false]);
 	}
 	public function edit(PerformaInvoice $pi) {
 		$total = 0;
 		foreach ($pi->items as $item) {
 			$total += $item->quantity * $item->price;
 		}
-		return view('pi.edit', ['pi' => $pi, 'total' => $total]);
+		return view('pi.view', ['pi' => $pi, 'total' => $total, 'edit' => true]);
 	}
 	public function new() {
 		$suppliers = Supplier::all();

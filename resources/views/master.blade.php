@@ -25,8 +25,10 @@
 						<li><a href="/customers">Customers</a></li>
 						<li><a href="/pi">Performa Invoices</a></li>
 						<li><a href="/po">Purchase Orders</a></li>
+						<li><a href="/stock">Stock</a></li>
 						<li><a href="/sales_invoices">Sales Inovices</a></li>
-						<li><a href="#">Stock</a></li>
+						<li><a href="/returns">Return Inwards</a></li>
+						<li><a href="/vouchers">Vouchers</a><li>
 						<li><a href="/users">Users</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">

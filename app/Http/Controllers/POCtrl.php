@@ -21,14 +21,14 @@ class POCtrl extends Controller
 		foreach ($po->items as $item) {
 			$total += $item->quantity * $item->price;
 		}
-		return view('po.view', ['po' => $po, 'total' => $total]);
+		return view('po.view', ['po' => $po, 'total' => $total, 'edit' => false]);
 	}
 	public function edit(PurchaseOrder $po) {
 		$total = 0;
 		foreach ($po->items as $item) {
 			$total += $item->quantity * $item->price;
 		}
-		return view('po.edit', ['po' => $po, 'total' => $total]);
+		return view('po.view', ['po' => $po, 'total' => $total, 'edit' => true]);
 	}
 	public function new() {
 		$invoices = PerformaInvoice::all();

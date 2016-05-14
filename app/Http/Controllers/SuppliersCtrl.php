@@ -45,4 +45,7 @@ class SuppliersCtrl extends Controller
     public function viewInvoices(Supplier $supplier) {
         return view('pi.index', ['pis' => $supplier->performa_invoices]);
     }
+    public function viewOrders(Supplier $supplier) {
+        return view('po.index', ['pos' => $supplier->purchase_orders]);
+    }
 }

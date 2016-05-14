@@ -24,6 +24,7 @@ Route::group([], function() {
 	Route::patch('/suppliers/{supplier}', 'SuppliersCtrl@update');
 	Route::delete('/suppliers/{supplier}', 'SuppliersCtrl@delete');
 	Route::get('/suppliers/{supplier}/invoices', 'SuppliersCtrl@viewInvoices');
+	Route::get('/suppliers/{supplier}/orders', 'SuppliersCtrl@viewOrders');
 });
 
 Route::group([], function() {

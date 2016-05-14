@@ -23,8 +23,10 @@
 	</div>
 	<!-- Delete and Edit buttons -->
 	<a href="/suppliers/{{$supplier->id}}/invoices" class="btn btn-primary">View Invoices</a>
+	<a href="/suppliers/{{$supplier->id}}/orders" class="btn btn-primary">View Orders</a>
+
 	<div class="pull-right">
-	<a href="/suppliers/{{ $supplier->id }}/edit" class="btn btn-primary">Edit Details</a>
+		<a href="/suppliers/{{ $supplier->id }}/edit" class="btn btn-primary">Edit Details</a>
 		<form action="/suppliers/{{ $supplier->id }}" method="post" style="display: inline-block">
 			{{ csrf_field() }}
 			{{ method_field('DELETE')}}

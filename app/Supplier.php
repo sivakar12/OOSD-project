@@ -16,4 +16,8 @@ class Supplier extends Model
     public function performa_invoices() {
     	return $this->hasMany('App\PerformaInvoice');
     }
+
+    public function purchase_orders() {
+    	return $this->hasMany('App\PurchaseOrder');
+    }
 }
