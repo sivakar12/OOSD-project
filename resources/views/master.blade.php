@@ -22,10 +22,10 @@
 				<div class="collapse navbar-collapse" id="nb">
 					<ul class="nav navbar-nav">
 						<li><a href="/suppliers">Suppliers</a></li>
-						<li><a href="/customers">Customers</a></li>
 						<li><a href="/pi">Performa Invoices</a></li>
 						<li><a href="/po">Purchase Orders</a></li>
 						<li><a href="/inventory">Inventory</a></li>
+						<li><a href="/customers">Customers</a></li>
 						<li><a href="/si">Sales Inovices</a></li>
 						<li><a href="/recipts">Receipts</a></li>
 						<li><a href="/returns">Returns</a></li>

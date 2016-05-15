@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-offset-3 col-md-6">
-		<h1>Choose Supplier</h1>
+		<h3>Choose Supplier</h3>
 		<form action="/pi/" method="post">
 			{{ csrf_field() }}
 			<div class="form-group">

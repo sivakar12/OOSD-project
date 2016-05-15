@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-offset-3 col-md-6">
-		<h1>Purchase Order List</h1>
+		<h2>Purchase Orders List</h2>
 		<a class="btn btn-default pull-right" href="/po/new">New</a>
 		<br><br>
 		<table class="table table-striped">

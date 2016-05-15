@@ -145,6 +145,9 @@
 	@endif
 	<!-- Delete and Edit buttons -->
 	<div class="pull-right">
+		@if(!$edit)
+		<a class="btn btn-primary" href="/pi/edit/{{$pi->id}}">Edit Invoice</a>
+		@endif
 		<form action="/pi/{{ $pi->id }}" method="post" style="display: inline-block">
 			{{ csrf_field() }}
 			{{ method_field('DELETE')}}
