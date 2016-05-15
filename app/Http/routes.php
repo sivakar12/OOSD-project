@@ -91,3 +91,13 @@ Route::group([], function() {
 	Route::post('/po/{po}', 'POCtrl@addItem');
 	Route::delete('/po/{po}/{poi}', 'POCtrl@removeItem');
 });
+
+Route::group([], function() {
+	Route::get('/vouchers', 'VouchersCtrl@index');
+	Route::get('/vouchers/{voucher}', 'VouchersCtrl@view')->where('voucher', '[0-9]+');
+	Route::get('/vouchers/new', 'VouchersCtrl@new');
+	Route::post('/vouchers', 'VouchersCtrl@create');
+	Route::get('/vouchers/{voucher}/edit', 'VouchersCtrl@edit');
+	Route::patch('/vouchers/{voucher}', 'VouchersCtrl@update');
+	Route::delete('/vouchers/{voucher}', 'VouchersCtrl@delete');
+});
