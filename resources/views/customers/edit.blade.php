@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-offset-3 col-md-6">
-		<h1>Edit Supplier Details</h1>
+		<h1>Edit Customer Details</h1>
 		<form action="/customers/{{ $customer->id }}" method="post">
 			{{ method_field('PATCH') }}
 			{{ csrf_field() }}

@@ -8,7 +8,7 @@ use App\Http\Requests;
 
 use App\Voucher;
 
-class Vouchers extends Controller
+class VouchersCtrl extends Controller
 {
     public function index() {
     	$vouchers = Voucher::all();

@@ -15,6 +15,7 @@
 					<th></th>
 				</tr>
 			</thead>
+			<tbody>
 			@foreach($pis as $pi)
 				<tr>
 					<td>{{ $pi->id }}</td>
@@ -24,6 +25,7 @@
 					<td><a href="/pi/edit/{{$pi->id}}">Edit</a></td>
 				</tr>
 			@endforeach
+			</tbody>
 		</table>
 </div>
 @endsection

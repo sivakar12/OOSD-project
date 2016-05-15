@@ -15,7 +15,7 @@ class CreateVouchersTable extends Migration
         Schema::create('vouchers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('vendor');
-            $table->string('descripton');
+            $table->string('description');
             $table->decimal('amount', 12, 2);
             $table->string('payment_type');
             $table->timestamps();
