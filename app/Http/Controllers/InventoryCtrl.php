@@ -17,7 +17,7 @@ class InventoryCtrl extends Controller
     	return view('inventory.view', ['item' => $item]);
     }
     public function new() {
-    	return view('inventory.new');
+    	return view('inventory.form', ['edit' => false]);
     }
     public function create(Request $request) {
     	$item = new InventoryItem;
@@ -25,7 +25,7 @@ class InventoryCtrl extends Controller
     	return redirect('/inventory/' . $item->id);
     }
     public function edit(InventoryItem $item) {
-    	return view('inventory.edit', ['item' => $item]);
+    	return view('inventory.form', ['item' => $item, 'edit' => true]);
     }
     public function update(Request $request, InventoryItem $item) {
     	$item->update($request->all());
