@@ -27,11 +27,12 @@
 						<li><a href="/po">Purchase Orders</a></li>
 						<li><a href="/stock">Stock</a></li>
 						<li><a href="/sales_invoices">Sales Inovices</a></li>
+						<li><a href="/recipts">Receipts</a></li>
 						<li><a href="/returns">Return Inwards</a></li>
 						<li><a href="/vouchers">Vouchers</a><li>
-						<li><a href="/users">Users</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/users">Users</a></li>
 						@if(Auth::check())
 						<li><a href="/logout">Logout ({{ Auth::user()->username }})</a></li>
 						@else
