@@ -101,3 +101,13 @@ Route::group([], function() {
 	Route::patch('/vouchers/{voucher}', 'VouchersCtrl@update');
 	Route::delete('/vouchers/{voucher}', 'VouchersCtrl@delete');
 });
+
+Route::group([], function() {
+	Route::get('/inventory', 'InventoryCtrl@index');
+	Route::get('/inventory/{item}', 'InventoryCtrl@view')->where('item', '[0-9]+');
+	Route::get('/inventory/new', 'InventoryCtrl@new');
+	Route::post('/inventory', 'InventoryCtrl@create');
+	Route::get('/inventory/{item}/edit', 'InventoryCtrl@edit');
+	Route::patch('/inventory/{item}', 'InventoryCtrl@update');
+	Route::delete('/inventory/{item}', 'InventoryCtrl@delete');
+});
