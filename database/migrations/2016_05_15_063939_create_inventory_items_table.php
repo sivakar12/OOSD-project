@@ -36,8 +36,8 @@ class CreateInventoryItemsTable extends Migration
             $table->string('cylinders');
             $table->string('fuel_type');
 
-            $table->string('purchase_cost');
-            $table->string('sales_price');
+            $table->decimal('purchase_cost', 12 ,2);
+            $table->decimal('sales_price', 12, 2);
 
             $table->softDeletes();
         });

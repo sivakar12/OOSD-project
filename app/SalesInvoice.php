@@ -9,7 +9,9 @@ class SalesInvoice extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = [];
+    protected $fillable = ['customer_id', 'chassis_number', 'make', 'model',
+    	'year', 'engine_number', 'color', 'milage', 'body_type',
+    	'fuel_type', 'engine_capacity', 'price', 'purchase_method', 'deposit'];
 
     protected $dates = ['deleted_at'];
 

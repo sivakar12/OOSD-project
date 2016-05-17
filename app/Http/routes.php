@@ -111,3 +111,13 @@ Route::group([], function() {
 	Route::patch('/inventory/{item}', 'InventoryCtrl@update');
 	Route::delete('/inventory/{item}', 'InventoryCtrl@delete');
 });
+
+Route::group([], function() {
+	Route::get('/si', 'SICtrl@index');
+	Route::get('/si/{si}', 'SICtrl@view')->where('si', '[0-9]+');
+	Route::get('/si/new/{chassis_number?}', 'SICtrl@new');
+	Route::post('/si', 'SICtrl@create');
+	Route::get('/si/{si}/edit', 'SICtrl@edit');
+	Route::patch('/si/{si}/', 'SICtrl@update');
+	Route::delete('/si/{si}/', 'SICtrl@delete');
+});

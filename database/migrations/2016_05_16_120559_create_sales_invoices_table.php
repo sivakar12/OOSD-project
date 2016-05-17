@@ -16,7 +16,20 @@ class CreateSalesInvoicesTable extends Migration
             $table->increments('id');
             $table->integer('customer_id');
 
-            $table->
+            $table->string('chassis_number');
+            $table->string('make');
+            $table->string('model');
+            $table->integer('year');
+            $table->integer('engine_number');
+            $table->string('color');
+            $table->integer('milage');
+            $table->string('body_type');
+            $table->string('fuel_type');
+            $table->string('engine_capacity');
+            
+            $table->decimal('price', 12, 2);
+            $table->string('purchase_method');
+            $table->decimal('deposit', 12, 2);
             
             $table->timestamps();
             $table->softDeletes();
