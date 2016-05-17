@@ -36,10 +36,10 @@
 				<div class="form-group col-md-6">
 					<label for="purchase_method" class="control-label">Purchase Method</label><br>
 					<div class="radio-inline">
-						<label><input type="radio" name="purchase_method">Lease</label>
+						<label><input type="radio" name="purchase_method" value="Lease">Lease</label>
 					</div>
 					<div class="radio-inline">
-						<label><input type="radio" name="purchase_method" checked>Cash</label>
+						<label><input type="radio" name="purchase_method" value="Cash" checked>Cash</label>
 					</div>
 				</div>
 				<div class="col-md-6">

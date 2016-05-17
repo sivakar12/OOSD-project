@@ -13,24 +13,28 @@ use App\Customer;
 class SICtrl extends Controller
 {
     public function index() {
-    	$all = SalesInvoice::all();
-    	return view('si.index', ['sis' => $all]);
+        $all = SalesInvoice::all();
+        return view('si.index', ['sis' => $all]);
     }
     public function view(SalesInvoice $si) {
-    	return view('si.view', ['si' => $si]);
+        $receipt_total = 0;
+        foreach($si->receipts as $receipt) {
+            $receipt_total += $receipt->amount;
+        }
+        return view('si.view', ['si' => $si, 'receipt_total' => $receipt_total]);
     }
     public function new($chassis_number = null) {
-    	$all_customers = Customer::all();
+        $all_customers = Customer::all();
         $vehicle = null;
-    	if ($chassis_number) {
-    		$vehicle = InventoryItem::where(
-    			'chassis_number', $chassis_number)->get()->first();
-    	}
-    	return view('si.new', ['customers' => $all_customers,
-    		'vehicle' => $vehicle]);
+        if ($chassis_number) {
+            $vehicle = InventoryItem::where(
+                'chassis_number', $chassis_number)->get()->first();
+        }
+        return view('si.new', ['customers' => $all_customers,
+            'vehicle' => $vehicle]);
     }
     public function create(Request $request) {
-    	//return 'creating sit with customer_id ' . $request->customer_id . 
+        //return 'creating sit with customer_id ' . $request->customer_id . 
         //    ' and chassis_number ' . $request->chassis_number;
         $vehicle = InventoryItem::where('chassis_number', $request->chassis_number)
             ->get()->first();
@@ -53,17 +57,17 @@ class SICtrl extends Controller
         $si->purchase_method = $request->purchase_method;
         $si->deposit = $request->deposit;
         $si->save();
- 		return redirect('/si/'. $si->id);
+        return redirect('/si/'. $si->id);
     }
     public function edit(SalesInvoice $si) {
-    	return view('si.edit');
+        return view('si.edit');
     }
     public function update(Request $request, SalesInvoice $si) {
-    	$si->update($request->all());
-    	return redirect('/si/' . $si->id);
+        $si->update($request->all());
+        return redirect('/si/' . $si->id);
     }
     public function delete(SalesInvoice $si) {
-    	$si->delete();
-    	return redirect('/si');
+        $si->delete();
+        return redirect('/si');
     }
 }

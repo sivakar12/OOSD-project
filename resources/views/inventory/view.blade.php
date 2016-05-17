@@ -33,6 +33,7 @@
 		</div>
 	</div>
 	<!-- Delete and Edit buttons -->
+	<a class="btn btn-primary" href="/si/new/{{$item->chassis_number}}">Add to Sales Invoice</a>
 	<div class="pull-right">
 	<a href="/inventory/{{ $item->id }}/edit" class="btn btn-primary">Edit Details</a>
 		<form action="/inventory/{{ $item->id }}" method="post" style="display: inline-block">

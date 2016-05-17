@@ -20,9 +20,9 @@ class CreateSalesInvoicesTable extends Migration
             $table->string('make');
             $table->string('model');
             $table->integer('year');
-            $table->integer('engine_number');
+            $table->bigInteger('engine_number');
             $table->string('color');
-            $table->integer('milage');
+            $table->decimal('milage', 10, 3);
             $table->string('body_type');
             $table->string('fuel_type');
             $table->string('engine_capacity');

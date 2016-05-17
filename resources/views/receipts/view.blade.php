@@ -28,6 +28,7 @@
 			<table class="table table-bordered">
 				<tr><td>Amount</td><td>{{ $receipt->amount}}</td></tr>
 				<tr><td>Payment Type</td><td> {{ $receipt->payment_type }}</td></tr>
+				<tr><td>Payment Due</td><td> {{ $receipt->sales_invoice->due_amount()}}</td>
 			</table>
 		</div>
 	</div>
@@ -56,6 +57,7 @@
 		</div>
 	</div>
 	<!-- Delete and Edit buttons -->
+	<a href="/si/{{$receipt->sales_invoice_id}}" class="btn btn-primary">View Sales Invoice</a>
 	<div class="pull-right">
 	<a href="/receipt/{{ $receipt->id }}/edit" class="btn btn-primary">Edit Details</a>
 		<form action="/receipt/{{ $receipt->id }}" method="post" style="display: inline-block">

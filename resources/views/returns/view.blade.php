@@ -46,6 +46,7 @@
 		</div>
 	</div>
 	<!-- Delete and Edit buttons -->
+	<a class="btn btn-primary" href="/si/{{$return->sales_invoice_id}}">View Sales Invoice</a>
 	<div class="pull-right">
 	<a href="/returns/{{ $return->id }}/edit" class="btn btn-primary">Edit Details</a>
 		<form action="/returns/{{ $return->id }}" method="post" style="display: inline-block">

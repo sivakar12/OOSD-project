@@ -27,6 +27,11 @@ class ReceiptCtrl extends Controller
     	return view('receipts.new', ['invoice' => $invoice]);
     }
     public function create(Request $request) {
+        $this->validate($request, [
+            'amount' => 'required|numeric',
+            'sales_invoice_id' => 'required|integer',
+
+        ]);
         $receipt = new Receipt;
         $receipt->sales_invoice_id = $request->sales_invoice_id;
         $c_id = SalesInvoice::where('id', $request->sales_invoice_id)->first()->customer_id;

@@ -18,4 +18,17 @@ class SalesInvoice extends Model
     public function customer() {
     	return $this->belongsTo('App\Customer');
     }
+    public function receipts() {
+    	return $this->hasMany('App\Receipt');
+    }
+    public function returns() {
+    	return $this->hasMany('App\ReturnInward');
+    }
+    public function due_amount() {
+        $receipt_total = 0;
+        foreach($this->receipts as $receipt) {
+            $receipt_total += $receipt->amount;
+        }
+        return $this->price - $this->deposit - $receipt_total;
+    }
 }

@@ -17,7 +17,7 @@ class CreateInventoryItemsTable extends Migration
             $table->timestamps();
             
             $table->string('type');
-            $table->string('chassis_number');
+            $table->bigInteger('chassis_number');
             $table->string('manufacturers_part');
 
 
@@ -27,9 +27,9 @@ class CreateInventoryItemsTable extends Migration
 
             $table->string('body_type');
             $table->string('primary_color');
-            $table->string('engine_number');
+            $table->bigInteger('engine_number');
 
-            $table->string('milage');
+            $table->decimal('milage', 10, 3);
             $table->string('transmission');
             $table->string('engine_capacity');
 

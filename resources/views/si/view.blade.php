@@ -23,9 +23,10 @@
 		<div class="panel-body">
 			<table class="table table-bordered">
 				<tr><td>Price</td><td>{{ $si->price}}</td></tr>
-				<tr><td>Payment Method</td><td> {{ $si->payment_method }}</td></tr>
+				<tr><td>Purchase Method</td><td> {{ $si->purchase_method }}</td></tr>
 				<tr><td>Deposit</td><td>{{ $si->deposit }}</td></tr>
-				<tr><td>Total Due</td><td>{{ $si->price - $si->deposit }}</td>
+				<tr><td>Receipts Total</td><td>{{$receipt_total}}</td>
+				<tr><td>Total Due</td><td>{{ $si->price - $si->deposit - $receipt_total }}</td>
 			</table>
 		</div>
 	</div>
@@ -56,6 +57,9 @@
 		</div>
 	</div>
 	<!-- Delete and Edit buttons -->
+	<a class="btn btn-primary" href="/receipts/new/{{$si->id}}">Create Receipt</a>
+	<a class="btn btn-primary" href="/returns/new/{{$si->id}}">Create Return</a>
+
 	<div class="pull-right">
 	<a href="/si/{{ $si->id }}/edit" class="btn btn-primary">Edit Details</a>
 		<form action="/si/{{ $si->id }}" method="post" style="display: inline-block">
