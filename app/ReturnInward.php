@@ -9,7 +9,7 @@ class ReturnInward extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = [];
+    protected $fillable = ['sales_invoice_id', 'customer_id'];
 
     protected $dates = ['deleted_at'];
 
@@ -17,6 +17,6 @@ class ReturnInward extends Model
     	return $this->belongsTo('App\Customer');
     }
     public function sales_invoice() {
-    	return $this->belongsTo('App\SalesInvoice'):
+    	return $this->belongsTo('App\SalesInvoice');
     }
 }
