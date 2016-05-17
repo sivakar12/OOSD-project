@@ -3,6 +3,7 @@
 @section('content')
 <div class="col-md-offset-3 col-md-6">
 		<h1>Edit User Credentials</h1>
+		@include('errors')
 		<form action="/users/{{ $user->id }}" method="post">
 			{{ method_field('PATCH') }}
 			{{ csrf_field() }}

@@ -2,6 +2,7 @@
 @section('content')
 	<div class="col-md-offset-3 col-md-6">
 		<h3>Create New Sales Invoice</h3>
+		@include('errors')
 		<form action="/si/" method="post">
 			{{ csrf_field() }}
 			<div class="form-group">

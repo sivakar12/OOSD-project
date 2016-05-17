@@ -3,6 +3,7 @@
 @section('content')
 <div class="col-md-offset-3 col-md-6">
 		<h1>Edit Supplier Details</h1>
+		@include('errors')
 		<form action="/suppliers/{{ $supplier->id }}" method="post">
 			{{ method_field('PATCH') }}
 			{{ csrf_field() }}

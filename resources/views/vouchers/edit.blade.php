@@ -3,6 +3,7 @@
 @section('content')
 <div class="col-md-offset-3 col-md-6">
 		<h1>Edit Voucher Details</h1>
+		@include('errors')
 		<form action="/vouchers/{{ $voucher->id }}" method="post">
 			{{ method_field('PATCH') }}
 			{{ csrf_field() }}

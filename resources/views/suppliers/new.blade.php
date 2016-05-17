@@ -8,24 +8,24 @@
 			{{ csrf_field() }}
 			<div class="form-group">
 				<label for="name">Name: </label>
-				<input name="name" type="text" class="form-control">
+				<input name="name" type="text" class="form-control" value="{{old('name')}}">
 			</div>
 			<div class="form-group">
 				<label for="address">Address: </label>
-				<textarea name="address" type="text" class="form-control"></textarea>
+				<textarea name="address" type="text" class="form-control" value="{{old('address')}}"></textarea>
 			</div>
 			<div class="form-group">
 				<label for="telephone">Telephone: </label>
-				<input name="telephone" type="text" class="form-control">
+				<input name="telephone" type="text" class="form-control" value="{{old('telephone')}}">
 			</div>
 			<div class="form-group">
 				<label for="email">Email: </label>
-				<input name="email" type="text" class="form-control">
+				<input name="email" type="text" class="form-control"  value="{{old('email')}}">
 			</div>
 
 			<div class="form-group">
 				<label for="website">Website: </label>
-				<input name="website" type="text" class="form-control">
+				<input name="website" type="text" class="form-control" value="{{old('website')}}">
 			</div>
 			<button type="submit" class="btn btn-primary">Add Supplier</button>
 		</form>

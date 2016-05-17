@@ -7,6 +7,8 @@
 	<h3>New Inventory Item</h3>
 	@endif
 
+	@include('errors')
+
 	<div class="panel panel-default">
 		<!-- <div class="panel-heading">Enter Details</div> -->
 		<div class="panel-body">

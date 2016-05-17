@@ -23,7 +23,9 @@ class CustomersCtrl extends Controller
     public function create(Request $request) {
     	$this->validate($request, [
     		'name' => 'required',
-    		'email' => 'email'
+    		'email' => 'email',
+            'telephone' => 'digits_between:9,13',
+            'address' => '',
     	]);
     	$customer = new Customer;
     	$customer->create($request->all());

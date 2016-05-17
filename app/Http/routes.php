@@ -16,7 +16,12 @@ use App\User;
 
 Route::get('/', function () { return view('welcome'); });
 
-Route::get('/login', function() { return view('login'); });
+Route::get('/login', function() { 
+	if (!Auth::check())
+		return view('login');
+	else
+		return redirect('/');
+});
 
 Route::post('/login', function(Request $request) {
 	$user = User::where([

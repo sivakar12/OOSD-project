@@ -77,6 +77,7 @@
 	</div>
 	@if($edit)
 	<!-- Form to add next item -->
+	@include('errors')
 	<div class="panel panel-default">
 		<div class="panel-heading">Add a new item</div>
 		<div class="panel-body">

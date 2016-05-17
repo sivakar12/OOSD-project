@@ -35,6 +35,9 @@ class PICtrl extends Controller
 		return view('pi.new', ['suppliers' => $suppliers]);
 	}
 	public function create(Request $request) {
+		$this->validate($request, [
+			'supplier_id' => 'required|exists:suppliers,id'
+		]);
 		$pi = new PerformaInvoice;
 		$pi->supplier_id = $request->supplier_id;
 		$pi->save();
@@ -45,6 +48,14 @@ class PICtrl extends Controller
 		return redirect('/pi/');
 	}
 	public function addItem(Request $request, PerformaInvoice $pi) {
+		$this->validate($request, [
+			'brand' => 'required',
+			'model' => 'required',
+			'year' => 'digits:4',
+			'quantity' => 'required|integer',
+			'price' => 'required',
+
+		]);
 		$pi->items()->create($request->all());
 		return redirect('/pi/edit/' . $pi->id);
 	}

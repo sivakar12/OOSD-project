@@ -2,6 +2,7 @@
 @section('content')
 	<div class="col-md-offset-3 col-md-6">
 		<h3>Create New Return</h3>
+		@include('errors')
 		<!-- Vehicle Details -->
 		@if($invoice)
 		<div class="panel panel-default">

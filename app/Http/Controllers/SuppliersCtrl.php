@@ -23,7 +23,8 @@ class SuppliersCtrl extends Controller
     public function create(Request $request) {
     	$this->validate($request, [
     		'name' => 'required',
-    		'email' => 'email'
+    		'email' => 'email',
+            'telephone' => 'digits:9,13'
     	]);
     	$supplier = new Supplier;
     	$supplier->create($request->all());

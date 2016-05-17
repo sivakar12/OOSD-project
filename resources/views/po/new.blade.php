@@ -3,6 +3,7 @@
 @section('content')
 <div class="col-md-offset-3 col-md-6">
 		<h3>Choose Performa Invoice</h3>
+		@include('errors')
 		<form action="/po/" method="post">
 			{{ csrf_field() }}
 			<div class="form-group">
