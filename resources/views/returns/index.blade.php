@@ -8,7 +8,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Return Inward Number</th>
+					<th>Return Number</th>
 					<th>Invoice Number</th>
 					<th>Customer</th>
 					<th>Date</th>

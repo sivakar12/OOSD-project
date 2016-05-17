@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('content')
-<div class="col-md-offset-3 col-md-6">
+<div class="col-md-offset-2 col-md-8">
 		<h1>Receipts</h1>
 		<a class="btn btn-default pull-right" href="/receipts/new">New</a>
 		<br><br>
