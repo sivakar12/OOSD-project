@@ -63,6 +63,10 @@ Route::group([], function() {
 	Route::get('/customers/{customer}/edit', 'CustomersCtrl@edit');
 	Route::patch('/customers/{customer}', 'CustomersCtrl@update');
 	Route::delete('/customers/{customer}', 'CustomersCtrl@delete');
+
+	Route::get('/customers/{customer}/invoices', 'CustomersCtrl@viewSalesInvoices');
+	Route::get('/customers/{customer}/receipts', 'CustomersCtrl@viewReceipts');
+	Route::get('/customers/{customer}/returns', 'CustomersCtrl@viewReturns');
 });
 
 Route::group(['middleware' => ['denysp', 'denyac', 'denymn', 'denysk']], function() {

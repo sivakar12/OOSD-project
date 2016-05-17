@@ -21,6 +21,11 @@
 		</div>
 	</div>
 	<!-- Delete and Edit buttons -->
+
+	<a href="/customers/{{$customer->id}}/invoices" class="btn btn-primary">View Invoices</a>
+	<a href="/customers/{{$customer->id}}/receipts" class="btn btn-primary">View Receipts</a>
+	<a href="/customers/{{$customer->id}}/returns" class="btn btn-primary">View Returns</a>
+
 	<div class="pull-right">
 	<a href="/customers/{{ $customer->id }}/edit" class="btn btn-primary">Edit Details</a>
 		<form action="/customers/{{ $customer->id }}" method="post" style="display: inline-block">

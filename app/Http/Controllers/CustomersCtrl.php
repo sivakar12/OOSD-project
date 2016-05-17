@@ -42,4 +42,16 @@ class CustomersCtrl extends Controller
     	$customer->delete();
     	return redirect('/customers/');
     }
+
+
+
+    public function viewSalesInvoices(Customer $customer) {
+        return view('si.index', ['sis' => $customer->sales_invoices]);
+    }
+    public function viewReceipts(Customer $customer) {
+        return view('receipts.index', ['receipts' => $customer->receipts]);
+    }
+    public function viewReturns(Customer $customer) {
+        return view('returns.index', ['returns' => $customer->return_inwards]);
+    }
 }
