@@ -17,6 +17,8 @@
 				<label for="chassis_number" class="control-label">Vehicle Chassis Number:</label>
 				<input name="chassis_number" type="text" class="form-control">
 			</div>
+			@else
+				<input type="hidden" name="chassis_number" value="{{$vehicle->chassis_number}}">
 			@endif
 			<div class="row">
 				

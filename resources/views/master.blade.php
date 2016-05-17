@@ -27,7 +27,7 @@
 						<li><a href="/inventory">Inventory</a></li>
 						<li><a href="/customers">Customers</a></li>
 						<li><a href="/si">Sales Inovices</a></li>
-						<li><a href="/recipts">Receipts</a></li>
+						<li><a href="/receipts">Receipts</a></li>
 						<li><a href="/returns">Returns</a></li>
 						<li><a href="/vouchers">Vouchers</a><li>
 					</ul>

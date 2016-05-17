@@ -121,3 +121,23 @@ Route::group([], function() {
 	Route::patch('/si/{si}/', 'SICtrl@update');
 	Route::delete('/si/{si}/', 'SICtrl@delete');
 });
+
+Route::group([], function() {
+	Route::get('/receipts', 'ReceiptCtrl@index');
+	Route::get('/receipts/{receipt}', 'ReceiptCtrl@view')->where('receipt', '[0-9]+');
+	Route::get('/receipts/new/{invoice_id?}', 'ReceiptCtrl@new');
+	Route::post('/receipts', 'ReceiptCtrl@create');
+	Route::get('/receipts/{receipt}/edit', 'ReceiptCtrl@edit');
+	Route::patch('/receipts/{receipt}/', 'ReceiptCtrl@update');
+	Route::delete('/receipts/{receipt}/', 'ReceiptCtrl@delete');
+});
+
+Route::group([], function() {
+	Route::get('/returns', 'ReturnsCtrl@index');
+	Route::get('/returns/{return}', 'ReturnsCtrl@view')->where('return', '[0-9]+');
+	Route::get('/returns/new/{invoice_id?}', 'ReturnsCtrl@new');
+	Route::post('/returns', 'ReturnsCtrl@create');
+	Route::get('/returns/{return}/edit', 'ReturnsCtrl@edit');
+	Route::patch('/returns/{return}/', 'ReturnsCtrl@update');
+	Route::delete('/returns/{return}/', 'ReturnsCtrl@delete');
+});
