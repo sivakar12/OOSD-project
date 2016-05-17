@@ -50,5 +50,11 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+
+        'denysp' => \App\Http\Middleware\DenySalesperson::class,
+        'denymn' => \App\Http\Middleware\DenyManager::class,
+        'denyac' => \App\Http\Middleware\DenyAccountant::class,
+        'denysk' => \App\Http\Middleware\DenyStockkeeper::class,
+
     ];
 }

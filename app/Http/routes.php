@@ -43,7 +43,7 @@ Route::get('/logout', function() {
 
 Route::get('/denied', function() { return view('denied'); });
 
-Route::group([], function() {
+Route::group(['middleware' => ['denysp', 'denysk']], function() {
 	Route::get('/suppliers', 'SuppliersCtrl@index');
 	Route::get('/suppliers/{supplier}', 'SuppliersCtrl@view')->where('supplier', '[0-9]+');
 	Route::get('/suppliers/new', 'SuppliersCtrl@new');
@@ -65,7 +65,7 @@ Route::group([], function() {
 	Route::delete('/customers/{customer}', 'CustomersCtrl@delete');
 });
 
-Route::group([], function() {
+Route::group(['middleware' => ['denysp', 'denyac', 'denymn', 'denysk']], function() {
 	Route::get('/users', 'UsersCtrl@index');
 	Route::get('/users/{user}', 'UsersCtrl@view')->where('user', '[0-9]+');
 	Route::get('/users/new', 'UsersCtrl@new');
@@ -75,7 +75,7 @@ Route::group([], function() {
 	Route::delete('/users/{user}', 'UsersCtrl@delete');
 });
 
-Route::group([], function() {
+Route::group(['middleware' => ['denysk', 'denysp']], function() {
 	Route::get('/pi', 'PICtrl@index');
 	Route::get('/pi/new/', 'PICtrl@new');
 	Route::post('/pi', 'PICtrl@create');
@@ -86,7 +86,7 @@ Route::group([], function() {
 	Route::delete('/pi/{pi}/{pii}', 'PICtrl@removeItem');
 });
 
-Route::group([], function() {
+Route::group(['middleware' => ['denysk', 'denysp']], function() {
 	Route::get('/po', 'POCtrl@index');
 	Route::get('/po/new/', 'POCtrl@new');
 	Route::post('/po', 'POCtrl@create');
@@ -97,7 +97,7 @@ Route::group([], function() {
 	Route::delete('/po/{po}/{poi}', 'POCtrl@removeItem');
 });
 
-Route::group([], function() {
+Route::group(['middleware' => []], function() {
 	Route::get('/vouchers', 'VouchersCtrl@index');
 	Route::get('/vouchers/{voucher}', 'VouchersCtrl@view')->where('voucher', '[0-9]+');
 	Route::get('/vouchers/new', 'VouchersCtrl@new');
@@ -107,7 +107,7 @@ Route::group([], function() {
 	Route::delete('/vouchers/{voucher}', 'VouchersCtrl@delete');
 });
 
-Route::group([], function() {
+Route::group(['middleware' => []], function() {
 	Route::get('/inventory', 'InventoryCtrl@index');
 	Route::get('/inventory/{item}', 'InventoryCtrl@view')->where('item', '[0-9]+');
 	Route::get('/inventory/new', 'InventoryCtrl@new');
@@ -117,7 +117,7 @@ Route::group([], function() {
 	Route::delete('/inventory/{item}', 'InventoryCtrl@delete');
 });
 
-Route::group([], function() {
+Route::group(['middleware' => []], function() {
 	Route::get('/si', 'SICtrl@index');
 	Route::get('/si/{si}', 'SICtrl@view')->where('si', '[0-9]+');
 	Route::get('/si/new/{chassis_number?}', 'SICtrl@new');
@@ -127,7 +127,7 @@ Route::group([], function() {
 	Route::delete('/si/{si}/', 'SICtrl@delete');
 });
 
-Route::group([], function() {
+Route::group(['middleware' => []], function() {
 	Route::get('/receipts', 'ReceiptCtrl@index');
 	Route::get('/receipts/{receipt}', 'ReceiptCtrl@view')->where('receipt', '[0-9]+');
 	Route::get('/receipts/new/{invoice_id?}', 'ReceiptCtrl@new');
@@ -137,7 +137,7 @@ Route::group([], function() {
 	Route::delete('/receipts/{receipt}/', 'ReceiptCtrl@delete');
 });
 
-Route::group([], function() {
+Route::group(['middleware' => []], function() {
 	Route::get('/returns', 'ReturnsCtrl@index');
 	Route::get('/returns/{return}', 'ReturnsCtrl@view')->where('return', '[0-9]+');
 	Route::get('/returns/new/{invoice_id?}', 'ReturnsCtrl@new');
