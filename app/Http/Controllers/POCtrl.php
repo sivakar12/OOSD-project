@@ -35,6 +35,9 @@ class POCtrl extends Controller
 		return view('po.new', ['invoices' => $invoices]);
 	}
 	public function create(Request $request) {
+		$this->validate($request, [
+			'performa_invoice_id' => 'exists:performa_invoices,id'
+		]);
 		$po = new PurchaseOrder;
 		$po->performa_invoice_id = $request->performa_invoice_id;
 		$po->supplier_id = 
@@ -52,6 +55,13 @@ class POCtrl extends Controller
 		return redirect('/po/');
 	}
 	public function addItem(Request $request, PurchaseOrder $po) {
+		$this->validate($request, [
+			'brand' => 'required',
+			'model' => 'required',
+			'year' => 'digits:4',
+			'quantity' => 'required|integer|min:1',
+			'price' => 'required|min:1',
+		]);
 		$po->items()->create($request->all());
 		return redirect('/po/edit/' . $po->id);
 	}

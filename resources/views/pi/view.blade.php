@@ -98,21 +98,21 @@
 				<div class="col-md-3">
 					<div class="form-group">
 						<label for="brand" class="control-label">Brand:</label>
-						<input name="brand" type="text" class="form-control input-sm">
+						<input name="brand" type="text" class="form-control input-sm" value="{{old('brand')}}">
 					</div>
 				</div>
 				<!-- model input -->
 				<div class="col-md-3">
 					<div class="form-group">
 						<label for="model" class="control-label">Model:</label>
-						<input name="model" type="text" class="form-control input-sm">
+						<input name="model" type="text" class="form-control input-sm" value="{{old('model')}}">
 					</div>
 				</div>
 				<!-- year input -->
 				<div class="col-md-3">
 					<div class="form-group">
 						<label for="year" class="control-label">Year:</label>
-						<input name="year" type="text" class="form-control input-sm">
+						<input name="year" type="text" class="form-control input-sm" value="{{old('year')}}">
 					</div>
 				</div>
 
@@ -120,21 +120,21 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="description" class="control-label">Description</label>
-						<input name="description" type="" class="form-control input-sm">
+						<input name="description" type="" class="form-control input-sm" value="{{old('description')}}">
 					</div>
 				</div>
 				<!-- quantity input -->
 				<div class="col-md-3">
 					<div class="form-group">
 						<label for="quantity" class="control-label">Quantity:</label>
-						<input name="quantity" type="" class="form-control input-sm">
+						<input name="quantity" type="" class="form-control input-sm" value="{{old('quantity')}}">
 					</div>
 				</div>
 				<!-- price input -->
 				<div class="col-md-3">
 					<div class="form-group">
 						<label for="price" class="control-label">Price:</label>
-						<input name="price" type="" class="form-control input-sm">
+						<input name="price" type="" class="form-control input-sm" value="{{old('price')}}">
 					</div>
 				</div>
 				<div class="pull-right">

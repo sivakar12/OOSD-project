@@ -57,13 +57,16 @@
 		</div>
 	</div>
 	<!-- Delete and Edit buttons -->
+	<div class="pull-right">
 	<a class="btn btn-primary" href="/receipts/new/{{$si->id}}">Create Receipt</a>
 	<a class="btn btn-primary" href="/returns/new/{{$si->id}}">Create Return</a>
 	<a class="btn btn-primary" href="/si/{{$si->id}}/receipts">View Receipts</a>
 	<a class="btn btn-primary" href="/si/{{$si->id}}/returns">View Returns</a>
-
+	<br><br>
+	
+	</div>
 	<div class="pull-right">
-	<a href="/si/{{ $si->id }}/edit" class="btn btn-primary">Edit Details</a>
+		<a href="/si/{{ $si->id }}/edit" class="btn btn-primary">Edit Details</a>
 		<form action="/si/{{ $si->id }}" method="post" style="display: inline-block">
 			{{ csrf_field() }}
 			{{ method_field('DELETE')}}
