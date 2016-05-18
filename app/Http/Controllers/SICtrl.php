@@ -10,6 +10,8 @@ use App\SalesInvoice;
 use App\InventoryItem;
 use App\Customer;
 
+use Log;
+
 class SICtrl extends Controller
 {
     public function index() {

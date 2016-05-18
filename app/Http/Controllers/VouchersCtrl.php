@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Voucher;
 
+use Log;
+
 class VouchersCtrl extends Controller
 {
     public function index() {

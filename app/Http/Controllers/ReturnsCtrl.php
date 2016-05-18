@@ -9,6 +9,8 @@ use App\Http\Requests;
 use App\ReturnInward;
 use App\SalesInvoice;
 
+use Log;
+
 class ReturnsCtrl extends Controller
 {
     public function index() {

@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Supplier;
 
+use Log;
+
 class SuppliersCtrl extends Controller
 {
     public function index() {

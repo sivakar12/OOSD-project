@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Customer;
 
+use Log;
+
 class CustomersCtrl extends Controller
 {
     public function index() {

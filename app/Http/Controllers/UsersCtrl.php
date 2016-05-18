@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 
+use Log;
+
 class UsersCtrl extends Controller
 {
     public function index() {

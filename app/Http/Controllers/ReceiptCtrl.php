@@ -9,6 +9,8 @@ use App\Http\Requests;
 use App\Receipt;
 use App\SalesInvoice;
 
+use Log;
+
 class ReceiptCtrl extends Controller
 {
     public function index() {

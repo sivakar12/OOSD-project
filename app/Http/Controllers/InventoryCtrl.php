@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\InventoryItem;
 
+use Log;
+
 class InventoryCtrl extends Controller
 {
 	public function index() {
@@ -25,7 +27,7 @@ class InventoryCtrl extends Controller
     }
     public function create(Request $request) {
         $this->validate($request, [
-            'chassis_number' => 'required|unique:inventory_items,chassis_number',
+            'chassis_number' => 'required|unique:inventory_items,chassis_number|digits_between:4,6',
             'weight' => 'integer|min:1',
             'year' => 'digits:4',
             'manufacturer' => 'required',

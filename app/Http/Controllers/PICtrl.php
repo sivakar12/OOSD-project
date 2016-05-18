@@ -10,6 +10,8 @@ use App\PerformaInvoice;
 use App\PerformaInvoiceItem;
 use App\Supplier;
 
+use Log;
+
 class PICtrl extends Controller
 {
     public function index() {

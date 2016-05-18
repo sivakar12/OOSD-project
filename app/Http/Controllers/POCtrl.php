@@ -10,6 +10,8 @@ use App\PurchaseOrder;
 use App\PurchaseOrderItem;
 use App\PerformaInvoice;
 
+use Log;
+
 class POCtrl extends Controller
 {
     public function index() {
