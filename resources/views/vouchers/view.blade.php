@@ -14,6 +14,7 @@
 		<div class="panel-body">
 			<table class="table table-bordered">
 				<tr><td>Vendor</td><td>{{ $voucher->vendor}}</td></tr>
+				<tr><td>Date</td><td>{{ $voucher->created_at->format('d-m-Y')}}</td></tr>
 				<tr><td>Description</td><td>{{ $voucher->description}}</td></tr>
 				<tr><td>Amount</td><td>{{ $voucher->amount}}</td></tr>
 				<tr><td>Payment Type</td><td>{{ $voucher->payment_type}}</td></tr>

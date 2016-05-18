@@ -8,6 +8,7 @@
 		<table class="table table-striped">
 			<thead>
 				<th>Voucher Number</th>
+				<th>Date</th>
 				<th>Vendor</th>
 				<th></th>
 			</thead>
@@ -15,6 +16,7 @@
 			@foreach($vouchers as $voucher)
 				<tr>
 					<td>Voucher #{{$voucher->id}}</td>
+					<th>{{$voucher->created_at->format('d-m-Y')}}</th>
 					<td>{{$voucher->vendor}}</td>
 					<td><a class="pull-right" href="/vouchers/{{$voucher->id}}">Details</a></td>
 				</tr>
