@@ -4,7 +4,7 @@
 <div class="col-md-offset-2 col-md-8">
 		<h1>Inventory</h1>
 		<a class="btn btn-default pull-right" href="/inventory/new">Add Vehicle</a>
-		<br><br>
+		<br><br><br><br>
 		<div class="row">
 			<div class="col-md-6">
 			<input type="text" id="cn-search" class="form-control" placeholder="Find by Chassis Number">

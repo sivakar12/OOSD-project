@@ -5,6 +5,7 @@
 		<h2>Performa Invoices List</h2>
 		<a class="btn btn-default pull-right" href="/pi/new">New</a>
 		<br><br>
+		<input type="text" id="searchbox" class="form-control" placeholder="Find by ID"><br>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -18,7 +19,7 @@
 			<tbody>
 			@foreach($pis as $pi)
 				<tr>
-					<td>{{ $pi->id }}</td>
+					<td class="pi-id">{{ $pi->id }}</td>
 					<td>{{ $pi->created_at->format('d-m-Y')}}</td>
 					<td>{{ $pi->supplier->name }}</td>
 					<td><a href="/pi/{{$pi->id}}">View</a></td>
@@ -28,4 +29,19 @@
 			</tbody>
 		</table>
 </div>
+<script>
+$(document).ready(function(){
+	$('#searchbox').keyup(function() {
+		var filter = $(this).val();
+
+		$('.pi-id').each(function() {
+			if ($(this).text().search(new RegExp(filter, 'i')) < 0) {
+				$(this).parent().fadeOut();
+			} else {
+				$(this).parent().fadeIn();
+			}
+		});
+	});
+});
+</script>
 @endsection

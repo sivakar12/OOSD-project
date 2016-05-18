@@ -25,8 +25,11 @@
 					<div class="col-md-4">
 						<div class="form-group">
 							<label for="type" class="control_label">Type:</label>
-							<input name="type" type="text" class="form-control input-sm"
-								@if($edit)value="{{$item->type}}"@endif>
+							<select name="type" class="form-control input-sm">
+								<option value="Car">Car</option>
+								<option value="Van">Van</option>
+								<option value="Other">Other</option>
+							</select>
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -56,7 +59,7 @@
 					</div>
 					<div class="col-md-4">
 						<div class="form-group">
-							<label for="manufacturer" class="control_label">Manufacturer:</label>
+							<label for="manufacturer" class="control_label">Make:</label>
 							<input name="manufacturer" type="text" class="form-control input-sm"
 							@if($edit)value="{{$item->manufacturer}}"@endif>
 						</div>
