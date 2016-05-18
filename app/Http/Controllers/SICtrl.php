@@ -34,8 +34,12 @@ class SICtrl extends Controller
             'vehicle' => $vehicle]);
     }
     public function create(Request $request) {
-        //return 'creating sit with customer_id ' . $request->customer_id . 
-        //    ' and chassis_number ' . $request->chassis_number;
+        $this->validate($request, [
+            'customer_id' => 'exists:customers,id',
+            'chassis_number' => 'exists:inventory_items,chassis_number',
+            'price' => 'required|integer|min:1',
+            'deposit' => 'required|integer|min:1',
+        ]);
         $vehicle = InventoryItem::where('chassis_number', $request->chassis_number)
             ->get()->first();
         
@@ -63,6 +67,12 @@ class SICtrl extends Controller
         return view('si.edit', ['si' => $si]);
     }
     public function update(Request $request, SalesInvoice $si) {
+        $this->validate($request, [
+            'customer_id' => 'exists:customers,id',
+            'chassis_number' => 'exists:inventory_items,chassis_number',
+            'price' => 'integer|min:1',
+            'deposit' => 'integer|min:1',
+        ]);
         $si->update($request->all());
         return redirect('/si/' . $si->id);
     }
