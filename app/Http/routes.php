@@ -43,6 +43,14 @@ Route::get('/logout', function() {
 
 Route::get('/denied', function() { return view('denied'); });
 
+Route::get('/change_theme', function() {
+	if (!session()->has('white')) {
+		session(['white' => true]);
+	} else {
+		session(['white' => !session('white')]);
+	}
+	return redirect()->back();
+});
 Route::group(['middleware' => ['denysp', 'denysk']], function() {
 	Route::get('/suppliers', 'SuppliersCtrl@index');
 	Route::get('/suppliers/{supplier}', 'SuppliersCtrl@view')->where('supplier', '[0-9]+');

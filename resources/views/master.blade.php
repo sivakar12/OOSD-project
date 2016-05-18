@@ -4,10 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Bitulink Dealings</title>
+		@if(!session('white'))
 		<link rel="stylesheet" href="/bootstrap-darkly.min.css">
+		@else
+		<link rel="stylesheet" href="/bootstrap-paper.min.css">
+		@endif
 		<script src="jquery.min.js"></script>
 		<script src="bootstrap.min.js"></script>
-		<style>.navbar-nav > li {  }</style>
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -33,12 +36,20 @@
 						<li><a href="/vouchers">Vouchers</a><li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/users">Users</a></li>
 						@if(Auth::check())
-						<li><a href="/logout">Logout ({{ Auth::user()->username }})</a></li>
+						<li class="dropdown">
+					        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Logged in as {{Auth::user()->username}}
+					        <span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+					          <li><a href="/users">Manage Users</a></li>
+					          <li><a href="/change_theme">Change Theme</a></li>
+					          <li><a href="/logout">Logout</a></li> 
+					        </ul>
+					    </li>
 						@else
 						<li><a href="/login">Login</a></li>
 						@endif
+						
 					</ul>
 				</div>
 			</div>
