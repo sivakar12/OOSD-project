@@ -24,7 +24,8 @@ class SuppliersCtrl extends Controller
     	$this->validate($request, [
     		'name' => 'required',
     		'email' => 'email',
-            'telephone' => 'digits:9,13'
+            'telephone' => 'digits_between:9,13',
+            'website' => 'url'
     	]);
     	$supplier = new Supplier;
     	$supplier->create($request->all());
@@ -34,6 +35,12 @@ class SuppliersCtrl extends Controller
     	return view('suppliers.edit', ['supplier' => $supplier]);
     }
     public function update(Request $request, Supplier $supplier) {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'email',
+            'telephone' => 'digits_between:9,13',
+            'website' => 'url'
+        ]);
     	$supplier->update($request->all());
     	return redirect('/suppliers/' . $supplier->id);
     }

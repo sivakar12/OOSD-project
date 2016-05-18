@@ -14,8 +14,7 @@
 			</div>
 			<div class="form-group">
 				<label for="address">Address: </label>
-				<textarea name="address" type="text" class="form-control"
-							 value="{{$supplier->address}}"></textarea>
+				<textarea name="address" type="text" class="form-control">{{$supplier->address}}</textarea>
 			</div>
 			<div class="form-group">
 				<label for="telephone">Telephone: </label>

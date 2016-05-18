@@ -12,7 +12,7 @@
 			</div>
 			<div class="form-group">
 				<label for="address">Address: </label>
-				<textarea name="address" type="text" class="form-control" value="{{old('address')}}"></textarea>
+				<textarea name="address" type="text" class="form-control">{{old('address')}}</textarea>
 			</div>
 			<div class="form-group">
 				<label for="telephone">Telephone: </label>
