@@ -30,13 +30,16 @@ Route::post('/login', function(Request $request) {
 	])->get()->first();
 	if ($user != null) {
 		Auth::login($user);
+		Log::info('A user is logged in ' . $user->username);
 		return redirect('/');
 	} else {
+		Log::info('A user tried to log in as '. $request->username);
 		return redirect('/login');
 	}
 });
 
 Route::get('/logout', function() {
+	Log::info('A user is logging out ' . Auth::user()->username);
 	Auth::logout();
 	return redirect('/');
 });

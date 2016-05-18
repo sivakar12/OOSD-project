@@ -29,6 +29,7 @@ class CustomersCtrl extends Controller
     	]);
     	$customer = new Customer;
     	$customer->create($request->all());
+        Log::info("New customer is created" . $request->name);
     	return redirect('/customers/' . $customer->id);
     }
     public function edit(Customer $customer) {
@@ -36,9 +37,11 @@ class CustomersCtrl extends Controller
     }
     public function update(Request $request, Customer $customer) {
     	$customer->update($request->all());
+        Log::info("A customer is changed" . $customer->name);
     	return redirect('/customers/' . $customer->id);
     }
     public function delete(Customer $customer) {
+        Log::info("New customer is deleted" . $customer->name);
     	$customer->delete();
     	return redirect('/customers/');
     }

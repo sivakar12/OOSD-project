@@ -41,9 +41,12 @@ class PICtrl extends Controller
 		$pi = new PerformaInvoice;
 		$pi->supplier_id = $request->supplier_id;
 		$pi->save();
+        Log::info("A PI is added" . $request->supplier_id);
 		return redirect('/pi/edit/' . $pi->id);
 	}
 	public function delete(PerformaInvoice $pi) {
+        Log::info("A PI item is deleted" . $pi->id);
+
 		$pi->delete();
 		return redirect('/pi/');
 	}
@@ -56,9 +59,11 @@ class PICtrl extends Controller
 			'price' => 'required|integer|min:1',
 		]);
 		$pi->items()->create($request->all());
+        Log::info("A item is added to the PI" . $pi->id);
 		return redirect('/pi/edit/' . $pi->id);
 	}
 	public function removeItem(PerformaInvoice $pi, PerformaInvoiceItem $pii) {
+        Log::info("A PI item is removed" . $pi->id);
 		$pii->delete();
 		return redirect('/pi/edit/'. $pi->id);
 	} 

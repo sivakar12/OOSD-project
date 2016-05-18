@@ -48,10 +48,12 @@ class POCtrl extends Controller
 		foreach($items_to_add as $item) {
 			$po->items()->create($item->getAttributes());
 		}
+        Log::info("A PO is created for PI" . $request->performa_invoice_id);
 		return redirect('/po/edit/' . $po->id);
 	}
 	public function delete(PurchaseOrder $po) {
 		$po->delete();
+        Log::info("A PO item is deleted" . $po->id);
 		return redirect('/po/');
 	}
 	public function addItem(Request $request, PurchaseOrder $po) {
@@ -63,9 +65,11 @@ class POCtrl extends Controller
 			'price' => 'required|integer|min:1',
 		]);
 		$po->items()->create($request->all());
+        Log::info("A new item is added to PO" . $po->id);
 		return redirect('/po/edit/' . $po->id);
 	}
 	public function removeItem(PurchaseOrder $po, PurchaseOrderItem $poi) {
+        Log::info("A PO item is removed" . $po->id);
 		$poi->delete();
 		return redirect('/po/edit/'. $po->id);
 	}

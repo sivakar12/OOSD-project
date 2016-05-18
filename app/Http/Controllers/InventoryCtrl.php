@@ -40,6 +40,7 @@ class InventoryCtrl extends Controller
         ]);
     	$item = new InventoryItem;
     	$item->create($request->all());
+        Log::info("New inventory item is added" . $request->chassis_number);
     	return redirect('/inventory/' . $item->id);
     }
     public function edit(InventoryItem $item) {
@@ -61,9 +62,12 @@ class InventoryCtrl extends Controller
 
         ]);
     	$item->update($request->all());
+        Log::info("An inventory item is modified" . $item->chassis_number);
     	return redirect('/inventory/' . $item->id);
     }
     public function delete(InventoryItem $item) {
+        Log::info("An inventory item is deleted" . $item->chassis_number);
+
     	$item->delete();
     	return redirect('/inventory/');
     }

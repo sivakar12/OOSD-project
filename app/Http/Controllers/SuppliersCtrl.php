@@ -29,6 +29,7 @@ class SuppliersCtrl extends Controller
     	]);
     	$supplier = new Supplier;
     	$supplier->create($request->all());
+        Log::info("New supplier is created" . $request->name);
     	return redirect('/suppliers/' . $supplier->id);
     }
     public function edit(Supplier $supplier) {
@@ -42,10 +43,12 @@ class SuppliersCtrl extends Controller
             'website' => 'url'
         ]);
     	$supplier->update($request->all());
+        Log::info("A supplier is changed" . $supplier->name);
     	return redirect('/suppliers/' . $supplier->id);
     }
     public function delete(Supplier $supplier) {
     	$supplier->delete();
+        Log::info("New supplier is deleted" . $supplier->name);
     	return redirect('/suppliers/');
     }
 
