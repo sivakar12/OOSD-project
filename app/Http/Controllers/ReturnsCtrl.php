@@ -33,12 +33,7 @@ class ReturnsCtrl extends Controller
         $return->save();
         return redirect('/returns/' . $return->id);
     }
-    public function edit() {
-
-    }
-    public function update() {
-        
-    }
+    
     public function delete(ReturnInward $return) {
         $return->delete();
         return redirect('/returns');
