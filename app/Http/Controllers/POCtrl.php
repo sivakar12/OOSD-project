@@ -60,7 +60,7 @@ class POCtrl extends Controller
 			'model' => 'required',
 			'year' => 'digits:4',
 			'quantity' => 'required|integer|min:1',
-			'price' => 'required|min:1',
+			'price' => 'required|integer|min:1',
 		]);
 		$po->items()->create($request->all());
 		return redirect('/po/edit/' . $po->id);

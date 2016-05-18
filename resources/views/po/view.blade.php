@@ -85,10 +85,10 @@
 
 	@if($edit)
 	<!-- Form to add next item -->
+	@include('errors')
 	<div class="panel panel-default">
 		<div class="panel-heading">Add a new item</div>
 		<div class="panel-body">
-			@include('errors')
 			<form action="/po/{{$po->id}}" method="post">
 				{{ csrf_field() }}
 				<!-- type input -->
