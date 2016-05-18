@@ -63,7 +63,7 @@ Route::group(['middleware' => ['denysp', 'denysk']], function() {
 	Route::get('/suppliers/{supplier}/orders', 'SuppliersCtrl@viewOrders');
 });
 
-Route::group([], function() {
+Route::group(['middleware' => ['denysk']], function() {
 	Route::get('/customers', 'CustomersCtrl@index');
 	Route::get('/customers/{customer}', 'CustomersCtrl@view')->where('customer', '[0-9]+');
 	Route::get('/customers/new', 'CustomersCtrl@addNew');
@@ -109,7 +109,7 @@ Route::group(['middleware' => ['denysk', 'denysp']], function() {
 	Route::delete('/po/{po}/{poi}', 'POCtrl@removeItem');
 });
 
-Route::group(['middleware' => []], function() {
+Route::group(['middleware' => ['denysk', 'denysp']], function() {
 	Route::get('/vouchers', 'VouchersCtrl@index');
 	Route::get('/vouchers/{voucher}', 'VouchersCtrl@view')->where('voucher', '[0-9]+');
 	Route::get('/vouchers/new', 'VouchersCtrl@addNew');
@@ -122,14 +122,19 @@ Route::group(['middleware' => []], function() {
 Route::group(['middleware' => []], function() {
 	Route::get('/inventory', 'InventoryCtrl@index');
 	Route::get('/inventory/{item}', 'InventoryCtrl@view')->where('item', '[0-9]+');
-	Route::get('/inventory/new', 'InventoryCtrl@addNew');
-	Route::post('/inventory', 'InventoryCtrl@create');
-	Route::get('/inventory/{item}/edit', 'InventoryCtrl@edit');
-	Route::patch('/inventory/{item}', 'InventoryCtrl@update');
-	Route::delete('/inventory/{item}', 'InventoryCtrl@delete');
+	Route::get('/inventory/new', ['uses' => 'InventoryCtrl@addNew', 
+		'middleware' =>['denymn', 'denyac', 'denysp']]);
+	Route::post('/inventory', ['uses' => 'InventoryCtrl@create', 
+		'middleware' =>['denymn', 'denyac', 'denysp']]);
+	Route::get('/inventory/{item}/edit', ['uses' => 'InventoryCtrl@edit', 
+		'middleware' =>['denymn', 'denyac', 'denysp']]);
+	Route::patch('/inventory/{item}', ['uses' => 'InventoryCtrl@update', 
+		'middleware' =>['denymn', 'denyac', 'denysp']]);
+	Route::delete('/inventory/{item}', ['uses' => 'InventoryCtrl@delete', 
+		'middleware' =>['denymn', 'denyac', 'denysp']]);
 });
 
-Route::group(['middleware' => []], function() {
+Route::group(['middleware' => ['denysk']], function() {
 	Route::get('/si', 'SICtrl@index');
 	Route::get('/si/{si}', 'SICtrl@view')->where('si', '[0-9]+');
 	Route::get('/si/new/{chassis_number?}', 'SICtrl@addNew');
@@ -142,7 +147,7 @@ Route::group(['middleware' => []], function() {
 	Route::get('/si/{si}/returns', 'SICtrl@viewReturns');
 });
 
-Route::group(['middleware' => []], function() {
+Route::group(['middleware' => ['denysk']], function() {
 	Route::get('/receipts', 'ReceiptCtrl@index');
 	Route::get('/receipts/{receipt}', 'ReceiptCtrl@view')->where('receipt', '[0-9]+');
 	Route::get('/receipts/new/{invoice_id?}', 'ReceiptCtrl@addNew');
