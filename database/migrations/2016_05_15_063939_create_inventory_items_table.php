@@ -17,7 +17,7 @@ class CreateInventoryItemsTable extends Migration
             $table->timestamps();
             
             $table->string('type');
-            $table->bigInteger('chassis_number');
+            $table->bigInteger('chassis_number')->unique();
             $table->string('manufacturers_part');
 
 

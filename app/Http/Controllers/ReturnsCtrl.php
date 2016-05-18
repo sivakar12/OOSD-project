@@ -39,8 +39,8 @@ class ReturnsCtrl extends Controller
     public function update() {
         
     }
-    public function delete(Receipt $receipt) {
-        $receipt->delete();
-        return redirect('/receipts');
+    public function delete(ReturnInward $return) {
+        $return->delete();
+        return redirect('/returns');
     }
 }

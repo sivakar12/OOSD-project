@@ -16,7 +16,7 @@ class CreateSalesInvoicesTable extends Migration
             $table->increments('id');
             $table->integer('customer_id');
 
-            $table->string('chassis_number');
+            $table->string('chassis_number')->unique();
             $table->string('make');
             $table->string('model');
             $table->integer('year');

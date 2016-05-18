@@ -129,6 +129,9 @@ Route::group(['middleware' => []], function() {
 	Route::get('/si/{si}/edit', 'SICtrl@edit');
 	Route::patch('/si/{si}/', 'SICtrl@update');
 	Route::delete('/si/{si}/', 'SICtrl@delete');
+
+	Route::get('/si/{si}/receipts', 'SICtrl@viewReceipts');
+	Route::get('/si/{si}/returns', 'SICtrl@viewReturns');
 });
 
 Route::group(['middleware' => []], function() {

@@ -20,6 +20,9 @@ class InventoryCtrl extends Controller
     	return view('inventory.form', ['edit' => false]);
     }
     public function create(Request $request) {
+        $this->validate($request, [
+            'chassis_number' => 'unique:inventory_items,chassis_number',
+        ]);
     	$item = new InventoryItem;
     	$item->create($request->all());
     	return redirect('/inventory/' . $item->id);

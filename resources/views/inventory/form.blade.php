@@ -146,7 +146,7 @@
 					
 					<div class="col-md-3">
 						<div class="form-group">
-							<label for="sales_price" class="control_label">Sales Price (Expected):</label>
+							<label for="sales_price" class="control_label">Sales Price:</label>
 							<input name="sales_price" type="text" class="form-control input-sm"
 							@if($edit)value="{{$item->sales_price}}"@endif>
 						</div>

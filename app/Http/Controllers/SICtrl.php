@@ -66,7 +66,19 @@ class SICtrl extends Controller
         $si->update($request->all());
         return redirect('/si/' . $si->id);
     }
+
+    public function viewReceipts(SalesInvoice $si) {
+        return view('receipts.index', ['receipts' => $si->receipts]);
+    }
+    public function viewReturns(SalesInvoice $si) {
+        return view('returns.index', ['returns' => $si->returns]);
+    }
     public function delete(SalesInvoice $si) {
+        foreach($si->receipts as $receipt) {
+            $receipt->delete();
+        }foreach($si->returns as $return) {
+            $return->delete();
+        }
         $si->delete();
         return redirect('/si');
     }
