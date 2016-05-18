@@ -154,9 +154,12 @@
 	@endif
 
 	<!-- Buttons -->
+	@if($edit)
+	<a class="btn btn-primary" href="/po/">Done Editing</a>
+	@endif
 	<div class="pull-right">
 		@if(!$edit)
-		<a href="po/edit/{{$po->id}}" class="btn btn-primary">Edit Order</a>
+		<a href="/po/edit/{{$po->id}}" class="btn btn-primary">Edit Order</a>
 		@endif
 		<form action="/po/{{ $po->id }}" method="post" style="display: inline-block">
 			{{ csrf_field() }}

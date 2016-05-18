@@ -110,8 +110,10 @@
 					<div class="col-md-4">
 						<div class="form-group">
 							<label for="transmission" class="control_label">Transmission:</label>
-							<input name="transmission" type="text" class="form-control input-sm"
-							@if($edit)value="{{$item->transmission}}"@endif>
+							<select class="form-control input-sm" name="transmission">
+								<option value="Auto">Auto</option>
+								<option value="Manual">Manual</option>
+							</select>
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -135,8 +137,12 @@
 					<div class="col-md-3">
 						<div class="form-group">
 							<label for="fuel_type" class="control_label">Fuel Type:</label>
-							<input name="fuel_type" type="text" class="form-control input-sm"
-							@if($edit)value="{{$item->fuel_type}}"@endif>
+							<select class="form-control input-sm" name="fuel_type">
+								<option>Petrol</option>
+								<option>Diesel</option>
+								<option>Gas</option>
+								<option>Electric</option>
+							</select> 
 						</div>
 					</div>
 					<div class="col-md-3">
@@ -155,7 +161,7 @@
 						</div>
 					</div>
 				</div>
-
+				<div class="pull-right">
 				<button type="submit" class="btn btn-primary">
 					@if($edit)
 					Update Details
@@ -163,6 +169,7 @@
 					Add Item
 					@endif
 				</button>
+				</div>
 			</form>
 		</div>
 	</div>

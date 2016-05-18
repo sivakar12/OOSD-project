@@ -13,22 +13,22 @@
 		</div>
 		<div class="panel-body">
 			<table class="table table-bordered">
-				<tr><td>Type</td><td>{{ $item->type}}</td></tr>
-				<tr><td>Chassis Number</td><td>{{ $item->chassis_number}}</td></tr>
-				<tr><td>Manufacturer's Part</td><td>{{ $item->manufacturers_part}}</td></tr>
-				<tr><td>Year</td><td>{{ $item->year}}</td></tr>
-				<tr><td>Manufacturer</td><td>{{ $item->manufacturer}}</td></tr>
-				<tr><td>Model</td><td>{{ $item->model}}</td></tr>
-				<tr><td>Body Type</td><td>{{ $item->body_type}}</td></tr>
-				<tr><td>Primary Color</td><td>{{ $item->primary_color}}</td></tr>
-				<tr><td>Engine Number</td><td>{{ $item->engine_number}}</td></tr>
-				<tr><td>Milage</td><td>{{ $item->milage}}</td></tr>
-				<tr><td>Transmission</td><td>{{ $item->transmission}}</td></tr>
-				<tr><td>Engine Capacity</td><td>{{ $item->engine_capacity}}</td></tr>
-				<tr><td>Cylinders</td><td>{{ $item->cylinders}}</td></tr>
-				<tr><td>Fuel Type</td><td>{{ $item->fuel_type}}</td></tr>
-				<tr><td>Purchase Cost</td><td>{{ $item->purchase_cost}}</td></tr>
-				<tr><td>Sales Price</td><td>{{ $item->sales_price}}</td></tr>
+				<tr><td>Type</td><td>{{ $item->type}}</td>
+				<td>Chassis Number</td><td>{{ $item->chassis_number}}</td></tr>
+				<tr><td>Manufacturer's Part</td><td>{{ $item->manufacturers_part}}</td>
+				<td>Year</td><td>{{ $item->year}}</td></tr>
+				<tr><td>Manufacturer</td><td>{{ $item->manufacturer}}</td>
+				<td>Model</td><td>{{ $item->model}}</td></tr>
+				<tr><td>Body Type</td><td>{{ $item->body_type}}</td>
+				<td>Primary Color</td><td>{{ $item->primary_color}}</td></tr>
+				<tr><td>Engine Number</td><td>{{ $item->engine_number}}</td>
+				<td>Milage</td><td>{{ $item->milage}}</td></tr>
+				<tr><td>Transmission</td><td>{{ $item->transmission}}</td>
+				<td>Engine Capacity</td><td>{{ $item->engine_capacity}}</td></tr>
+				<tr><td>Cylinders</td><td>{{ $item->cylinders}}</td>
+				<td>Fuel Type</td><td>{{ $item->fuel_type}}</td></tr>
+				<tr><td>Purchase Cost</td><td>{{ $item->purchase_cost}}</td>
+				<td>Sales Price</td><td>{{ $item->sales_price}}</td></tr>
 			</table>
 		</div>
 	</div>

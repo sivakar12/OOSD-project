@@ -145,6 +145,9 @@
 	</div>
 	@endif
 	<!-- Delete and Edit buttons -->
+	@if($edit)
+	<a class="btn btn-primary" href="/pi/">Done Editing</a>
+	@endif
 	<div class="pull-right">
 		@if(!$edit)
 		<a class="btn btn-primary" href="/pi/edit/{{$pi->id}}">Edit Invoice</a>

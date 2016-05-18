@@ -21,7 +21,18 @@ class InventoryCtrl extends Controller
     }
     public function create(Request $request) {
         $this->validate($request, [
-            'chassis_number' => 'unique:inventory_items,chassis_number',
+            'chassis_number' => 'required|unique:inventory_items,chassis_number',
+            'weight' => 'integer|min:1',
+            'year' => 'digits:4',
+            'manufacturer' => 'required',
+            'model' => 'required',
+            'engine_number' => 'required|digits_between:7,10',
+            'milage' => 'integer|min:1',
+            'engine_capacity' => 'integer|min:1',
+            'cylinders' => 'integer|min:1',
+            'purchase_cost' => 'required|integer|min:1',
+            'sales_price' => 'required|integer|min:1',
+
         ]);
     	$item = new InventoryItem;
     	$item->create($request->all());
@@ -31,6 +42,20 @@ class InventoryCtrl extends Controller
     	return view('inventory.form', ['item' => $item, 'edit' => true]);
     }
     public function update(Request $request, InventoryItem $item) {
+        $this->validate($request, [
+            'chassis_number' => 'required:exists:inventory_items,chassis_number',
+            'weight' => 'integer|min:1',
+            'year' => 'digits:4',
+            'manufacturer' => 'required',
+            'model' => 'required',
+            'engine_number' => 'required|digits_between:7,10',
+            'milage' => 'integer|min:1',
+            'engine_capacity' => 'integer|min:1',
+            'cylinders' => 'integer|min:1',
+            'purchase_cost' => 'required|integer|min:1',
+            'sales_price' => 'required|integer|min:1',
+
+        ]);
     	$item->update($request->all());
     	return redirect('/inventory/' . $item->id);
     }
