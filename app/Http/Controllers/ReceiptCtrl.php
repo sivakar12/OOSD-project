@@ -41,11 +41,12 @@ class ReceiptCtrl extends Controller
         $receipt->save();
         return redirect('/receipts/' . $receipt->id);
     }
-    public function edit() {
-
+    public function edit(Receipt $receipt) {
+        return view('receipts.edit', ['receipt' => $receipt]);
     }
-    public function update() {
-        
+    public function update(Request $request, Receipt $receipt) {
+        $receipt->update($request->all());
+        return redirect('/receipts/' . $receipt->id);
     }
     public function delete(Receipt $receipt) {
         $receipt->delete();

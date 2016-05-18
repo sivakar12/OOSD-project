@@ -4,13 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Bitulink Dealings</title>
+		<script src="jquery.min.js"></script>
+		<script src="bootstrap.min.js"></script>
 		@if(!session('white'))
 		<link rel="stylesheet" href="/bootstrap-darkly.min.css">
 		@else
 		<link rel="stylesheet" href="/bootstrap-paper.min.css">
 		@endif
-		<script src="jquery.min.js"></script>
-		<script src="bootstrap.min.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-default">

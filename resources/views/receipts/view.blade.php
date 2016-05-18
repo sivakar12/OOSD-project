@@ -59,8 +59,8 @@
 	<!-- Delete and Edit buttons -->
 	<a href="/si/{{$receipt->sales_invoice_id}}" class="btn btn-primary">View Sales Invoice</a>
 	<div class="pull-right">
-	<a href="/receipt/{{ $receipt->id }}/edit" class="btn btn-primary">Edit Details</a>
-		<form action="/receipt/{{ $receipt->id }}" method="post" style="display: inline-block">
+	<a href="/receipts/{{ $receipt->id }}/edit" class="btn btn-primary">Edit Details</a>
+		<form action="/receipts/{{ $receipt->id }}" method="post" style="display: inline-block">
 			{{ csrf_field() }}
 			{{ method_field('DELETE')}}
 			<button type="submit" class="btn btn-danger">Delete Receipt</button>
