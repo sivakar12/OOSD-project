@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             'username' => 'foo',
             'password' => 'bar',
             'type' => 'admin'
-        ])
+        ]);
     }
 
     /**
