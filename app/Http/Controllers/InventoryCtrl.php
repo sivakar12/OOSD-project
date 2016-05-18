@@ -11,7 +11,11 @@ class InventoryCtrl extends Controller
 {
 	public function index() {
     	$items = InventoryItem::all();
-    	return view('inventory.index', ['items' => $items]);
+        $car = InventoryItem::where('type', 'Car')->count();
+        $van = InventoryItem::where('type', 'Van')->count();
+        $other = InventoryItem::where('type', 'Other')->count();
+    	return view('inventory.index', ['items' => $items, 
+            'car' => $car, 'van' => $van, 'other' => $other]);
     }
     public function view(InventoryItem $item) {
     	return view('inventory.view', ['item' => $item]);

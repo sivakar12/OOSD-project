@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('content')
-<div class="col-md-offset-2 col-md-8">
+<div class="col-md-7">
 		<h1>Inventory</h1>
 		<a class="btn btn-default pull-right" href="/inventory/new">Add Vehicle</a>
 		<br><br><br><br>
@@ -32,6 +32,45 @@
 			@endforeach
 			</tbody>
 		</table>
+</div>
+
+<div class="col-md-5">
+	{{--<div class="container">--}}
+
+	<canvas id="daily-reports" height="300" width="400"></canvas>
+	<script src="/Chart.js"></script>
+	<script>
+		(function() {
+			var ctx = document.getElementById('daily-reports').getContext('2d');
+			var pieData = [
+				{
+					label: "Car",
+					value: {{$car}},
+					color:"#878BB6"
+				},
+				{
+					label: "Van",
+					value : {{$van}},
+					color : "#4ACAB4"
+				},
+				{
+					label: "Others",
+					value : {{$other}},
+					color : "#FF8153"
+				}
+			];
+			// pie chart options
+			var pieOptions = {
+				segmentShowStroke : false,
+				animateScale : true
+			}
+			// get pie chart canvas
+			// draw pie chart
+			new Chart(ctx).Pie(pieData, pieOptions);
+
+		})();
+	</script>
+	{{--</div>--}}
 </div>
 <script>
 $(document).ready(function(){
