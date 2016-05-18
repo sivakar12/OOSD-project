@@ -18,7 +18,7 @@ class ReturnsCtrl extends Controller
     public function view(ReturnInward $return) {
     	return view('returns.view', ['return' => $return]);
     }
-    public function new($invoice_id = null) {
+    public function addNew($invoice_id = null) {
     	$invoice = null;
     	if($invoice_id) {
     		$invoice  = SalesInvoice::where('id', $invoice_id)->get()->first();

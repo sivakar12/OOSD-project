@@ -23,7 +23,7 @@ class SICtrl extends Controller
         }
         return view('si.view', ['si' => $si, 'receipt_total' => $receipt_total]);
     }
-    public function new($chassis_number = null) {
+    public function addNew($chassis_number = null) {
         $all_customers = Customer::all();
         $vehicle = null;
         if ($chassis_number) {

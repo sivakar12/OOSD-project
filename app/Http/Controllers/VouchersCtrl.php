@@ -17,7 +17,7 @@ class VouchersCtrl extends Controller
     public function view(Voucher $voucher) {
     	return view('vouchers.view', ['voucher' => $voucher]);
     }
-    public function new() {
+    public function addNew() {
     	return view('vouchers.new');
     }
     public function create(Request $request) {

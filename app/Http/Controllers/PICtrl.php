@@ -30,7 +30,7 @@ class PICtrl extends Controller
 		}
 		return view('pi.view', ['pi' => $pi, 'total' => $total, 'edit' => true]);
 	}
-	public function new() {
+	public function addNew() {
 		$suppliers = Supplier::all();
 		return view('pi.new', ['suppliers' => $suppliers]);
 	}

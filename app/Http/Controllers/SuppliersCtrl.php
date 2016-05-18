@@ -17,7 +17,7 @@ class SuppliersCtrl extends Controller
     public function view(Supplier $supplier) {
     	return view('suppliers.view', ['supplier' => $supplier]);
     }
-    public function new() {
+    public function addNew() {
     	return view('suppliers.new');
     }
     public function create(Request $request) {

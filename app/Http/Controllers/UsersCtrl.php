@@ -16,7 +16,7 @@ class UsersCtrl extends Controller
     public function view(User $user) {
     	return view('users.view', ['user' => $user]);
     }
-    public function new() {
+    public function addNew() {
     	return view('users.new');
     }
     public function create(Request $request) {

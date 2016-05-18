@@ -17,7 +17,7 @@ class CustomersCtrl extends Controller
     public function view(Customer $customer) {
     	return view('customers.view', ['customer' => $customer]);
     }
-    public function new() {
+    public function addNew() {
     	return view('customers.new');
     }
     public function create(Request $request) {

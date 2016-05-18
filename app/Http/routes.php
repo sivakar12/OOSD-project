@@ -54,7 +54,7 @@ Route::get('/change_theme', function() {
 Route::group(['middleware' => ['denysp', 'denysk']], function() {
 	Route::get('/suppliers', 'SuppliersCtrl@index');
 	Route::get('/suppliers/{supplier}', 'SuppliersCtrl@view')->where('supplier', '[0-9]+');
-	Route::get('/suppliers/new', 'SuppliersCtrl@new');
+	Route::get('/suppliers/new', 'SuppliersCtrl@addNew');
 	Route::post('/suppliers', 'SuppliersCtrl@create');
 	Route::get('/suppliers/{supplier}/edit', 'SuppliersCtrl@edit');
 	Route::patch('/suppliers/{supplier}', 'SuppliersCtrl@update');
@@ -66,7 +66,7 @@ Route::group(['middleware' => ['denysp', 'denysk']], function() {
 Route::group([], function() {
 	Route::get('/customers', 'CustomersCtrl@index');
 	Route::get('/customers/{customer}', 'CustomersCtrl@view')->where('customer', '[0-9]+');
-	Route::get('/customers/new', 'CustomersCtrl@new');
+	Route::get('/customers/new', 'CustomersCtrl@addNew');
 	Route::post('/customers', 'CustomersCtrl@create');
 	Route::get('/customers/{customer}/edit', 'CustomersCtrl@edit');
 	Route::patch('/customers/{customer}', 'CustomersCtrl@update');
@@ -80,7 +80,7 @@ Route::group([], function() {
 Route::group(['middleware' => ['denysp', 'denyac', 'denymn', 'denysk']], function() {
 	Route::get('/users', 'UsersCtrl@index');
 	Route::get('/users/{user}', 'UsersCtrl@view')->where('user', '[0-9]+');
-	Route::get('/users/new', 'UsersCtrl@new');
+	Route::get('/users/new', 'UsersCtrl@addNew');
 	Route::post('/users', 'UsersCtrl@create');
 	Route::get('/users/{user}/edit', 'UsersCtrl@edit');
 	Route::patch('/users/{user}', 'UsersCtrl@update');
@@ -89,7 +89,7 @@ Route::group(['middleware' => ['denysp', 'denyac', 'denymn', 'denysk']], functio
 
 Route::group(['middleware' => ['denysk', 'denysp']], function() {
 	Route::get('/pi', 'PICtrl@index');
-	Route::get('/pi/new/', 'PICtrl@new');
+	Route::get('/pi/new/', 'PICtrl@addNew');
 	Route::post('/pi', 'PICtrl@create');
 	Route::get('/pi/{pi}', 'PICtrl@view');
 	Route::get('/pi/edit/{pi}', 'PICtrl@edit');
@@ -100,7 +100,7 @@ Route::group(['middleware' => ['denysk', 'denysp']], function() {
 
 Route::group(['middleware' => ['denysk', 'denysp']], function() {
 	Route::get('/po', 'POCtrl@index');
-	Route::get('/po/new/', 'POCtrl@new');
+	Route::get('/po/new/', 'POCtrl@addNew');
 	Route::post('/po', 'POCtrl@create');
 	Route::get('/po/{po}', 'POCtrl@view');
 	Route::get('/po/edit/{po}', 'POCtrl@edit');
@@ -112,7 +112,7 @@ Route::group(['middleware' => ['denysk', 'denysp']], function() {
 Route::group(['middleware' => []], function() {
 	Route::get('/vouchers', 'VouchersCtrl@index');
 	Route::get('/vouchers/{voucher}', 'VouchersCtrl@view')->where('voucher', '[0-9]+');
-	Route::get('/vouchers/new', 'VouchersCtrl@new');
+	Route::get('/vouchers/new', 'VouchersCtrl@addNew');
 	Route::post('/vouchers', 'VouchersCtrl@create');
 	Route::get('/vouchers/{voucher}/edit', 'VouchersCtrl@edit');
 	Route::patch('/vouchers/{voucher}', 'VouchersCtrl@update');
@@ -122,7 +122,7 @@ Route::group(['middleware' => []], function() {
 Route::group(['middleware' => []], function() {
 	Route::get('/inventory', 'InventoryCtrl@index');
 	Route::get('/inventory/{item}', 'InventoryCtrl@view')->where('item', '[0-9]+');
-	Route::get('/inventory/new', 'InventoryCtrl@new');
+	Route::get('/inventory/new', 'InventoryCtrl@addNew');
 	Route::post('/inventory', 'InventoryCtrl@create');
 	Route::get('/inventory/{item}/edit', 'InventoryCtrl@edit');
 	Route::patch('/inventory/{item}', 'InventoryCtrl@update');
@@ -132,7 +132,7 @@ Route::group(['middleware' => []], function() {
 Route::group(['middleware' => []], function() {
 	Route::get('/si', 'SICtrl@index');
 	Route::get('/si/{si}', 'SICtrl@view')->where('si', '[0-9]+');
-	Route::get('/si/new/{chassis_number?}', 'SICtrl@new');
+	Route::get('/si/new/{chassis_number?}', 'SICtrl@addNew');
 	Route::post('/si', 'SICtrl@create');
 	Route::get('/si/{si}/edit', 'SICtrl@edit');
 	Route::patch('/si/{si}/', 'SICtrl@update');
@@ -145,7 +145,7 @@ Route::group(['middleware' => []], function() {
 Route::group(['middleware' => []], function() {
 	Route::get('/receipts', 'ReceiptCtrl@index');
 	Route::get('/receipts/{receipt}', 'ReceiptCtrl@view')->where('receipt', '[0-9]+');
-	Route::get('/receipts/new/{invoice_id?}', 'ReceiptCtrl@new');
+	Route::get('/receipts/new/{invoice_id?}', 'ReceiptCtrl@addNew');
 	Route::post('/receipts', 'ReceiptCtrl@create');
 	Route::get('/receipts/{receipt}/edit', 'ReceiptCtrl@edit');
 	Route::patch('/receipts/{receipt}/', 'ReceiptCtrl@update');
@@ -155,7 +155,7 @@ Route::group(['middleware' => []], function() {
 Route::group(['middleware' => []], function() {
 	Route::get('/returns', 'ReturnsCtrl@index');
 	Route::get('/returns/{return}', 'ReturnsCtrl@view')->where('return', '[0-9]+');
-	Route::get('/returns/new/{invoice_id?}', 'ReturnsCtrl@new');
+	Route::get('/returns/new/{invoice_id?}', 'ReturnsCtrl@addNew');
 	Route::post('/returns', 'ReturnsCtrl@create');
 	Route::get('/returns/{return}/edit', 'ReturnsCtrl@edit');
 	Route::patch('/returns/{return}/', 'ReturnsCtrl@update');

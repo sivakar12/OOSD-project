@@ -30,7 +30,7 @@ class POCtrl extends Controller
 		}
 		return view('po.view', ['po' => $po, 'total' => $total, 'edit' => true]);
 	}
-	public function new() {
+	public function addNew() {
 		$invoices = PerformaInvoice::all();
 		return view('po.new', ['invoices' => $invoices]);
 	}

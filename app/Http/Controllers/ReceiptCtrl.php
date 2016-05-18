@@ -19,7 +19,7 @@ class ReceiptCtrl extends Controller
     //     return $receipt;
     	return view('receipts.view', ['receipt' => $receipt]);
     }
-    public function new($invoice_id = null) {
+    public function addNew($invoice_id = null) {
     	$invoice = null;
     	if($invoice_id) {
     		$invoice  = SalesInvoice::where('id', $invoice_id)->get()->first();

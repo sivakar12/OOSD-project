@@ -16,7 +16,7 @@ class InventoryCtrl extends Controller
     public function view(InventoryItem $item) {
     	return view('inventory.view', ['item' => $item]);
     }
-    public function new() {
+    public function addNew() {
     	return view('inventory.form', ['edit' => false]);
     }
     public function create(Request $request) {
