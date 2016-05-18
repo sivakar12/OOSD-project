@@ -60,7 +60,7 @@ class SICtrl extends Controller
         return redirect('/si/'. $si->id);
     }
     public function edit(SalesInvoice $si) {
-        return view('si.edit');
+        return view('si.edit', ['si' => $si]);
     }
     public function update(Request $request, SalesInvoice $si) {
         $si->update($request->all());
