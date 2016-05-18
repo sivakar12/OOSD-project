@@ -28,8 +28,8 @@ class ReceiptCtrl extends Controller
     }
     public function create(Request $request) {
         $this->validate($request, [
-            'amount' => 'required|numeric',
-            'sales_invoice_id' => 'required|integer',
+            'amount' => 'required|integer|min:1',
+            'sales_invoice_id' => 'exists:sales_invoices,id',
 
         ]);
         $receipt = new Receipt;
@@ -45,6 +45,11 @@ class ReceiptCtrl extends Controller
         return view('receipts.edit', ['receipt' => $receipt]);
     }
     public function update(Request $request, Receipt $receipt) {
+        $this->validate($request, [
+            'amount' => 'required|integer|min:1',
+            'sales_invoice_id' => 'exists:sales_invoices,id',
+
+        ]);
         $receipt->update($request->all());
         return redirect('/receipts/' . $receipt->id);
     }

@@ -26,6 +26,9 @@ class ReturnsCtrl extends Controller
     	return view('returns.new', ['invoice' => $invoice]);
     }
     public function create(Request $request) {
+        $this->validate($request, [
+            'sales_invoice_id' => 'required|integer|exists:sales_invoices,id',
+        ]);
         $return = new ReturnInward;
         $return->sales_invoice_id = $request->sales_invoice_id;
         $c_id = SalesInvoice::where('id', $request->sales_invoice_id)->first()->customer_id;

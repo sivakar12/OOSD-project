@@ -21,6 +21,10 @@ class VouchersCtrl extends Controller
     	return view('vouchers.new');
     }
     public function create(Request $request) {
+        $this->validate($request, [
+            'vendor' => 'required',
+            'amount' => 'required|integer|min:1'
+        ]);
     	$voucher = new Voucher;
     	$voucher->create($request->all());
     	return redirect('/vouchers/' . $voucher->id);
@@ -29,6 +33,10 @@ class VouchersCtrl extends Controller
     	return view('vouchers.edit', ['voucher' => $voucher]);
     }
     public function update(Request $request, Voucher $voucher) {
+        $this->validate($request, [
+            'vendor' => 'required',
+            'amount' => 'required|integer|min:1'
+        ]);
     	$voucher->update($request->all());
     	return redirect('/vouchers/' . $voucher->id);
     }
